@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 10월 직무재평가 면접자료</title>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  @font-face {
+    font-family: 'DWImpactamin';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  :root{
+    --paper:#FFFDF9;
+    --ink:#2B2622;
+    --ink-soft:#6B6259;
+    --line:#E7DFD3;
+    --accent:#E8935B;
+    --accent-soft:#FCE6D4;
+    --accent-deep:#B96A38;
+    --tag-jobre:#C98A4B;
+    --card:#FFFFFF;
+    --radius:14px;
+    --font-brand:'DWImpactamin','Pretendard',-apple-system,sans-serif;
+    --font-body:'DWImpactamin','Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    --shadow-sm:0 1px 2px rgba(43,38,34,0.05), 0 1px 1px rgba(43,38,34,0.04);
+    --shadow-md:0 4px 10px -4px rgba(43,38,34,0.10), 0 12px 28px -14px rgba(43,38,34,0.14);
+    --shadow-lift:0 8px 20px -6px rgba(233,147,91,0.28), 0 2px 6px rgba(43,38,34,0.08);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    min-height:100vh;
+    line-height:1.5;
+  }
+  .stage{
+    max-width:1080px;
+    margin:0 auto;
+    padding:28px 20px 80px;
+  }
+
+  #global-nav{
+    background:linear-gradient(120deg, #2B2622 0%, #423A32 100%);
+    padding:15px 20px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.12);
+  }
+  .navbar-inner{
+    max-width:1080px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{
+    width:36px; height:36px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    font-family:var(--font-brand);
+    font-size:13px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.25);
+    flex-shrink:0;
+  }
+  .brand-text .b-main{
+    font-family:var(--font-brand);
+    color:#fff;
+    font-size:15.5px;
+    line-height:1.3;
+  }
+  .brand-text .b-sub{
+    font-size:11px;
+    color:rgba(255,255,255,0.55);
+    margin-top:1px;
+  }
+  .nav-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:12.5px;
+    color:rgba(255,255,255,0.85);
+  }
+  .nav-user b{ color:#fff; }
+  .nav-user button{
+    border:1px solid rgba(255,255,255,0.28);
+    background:rgba(255,255,255,0.08);
+    color:#fff;
+    font-size:11.5px;
+    padding:6px 12px;
+    border-radius:7px;
+    cursor:pointer;
+    font-family:var(--font-body);
+    transition:background .15s ease;
+  }
+  .nav-user button:hover{ background:rgba(255,255,255,0.2); }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    margin-bottom:18px;
+  }
+  .back-link:hover{ color:var(--accent-deep); }
+
+  .screen{ display:none; }
+  .screen.active{ display:block; }
+
+  /* ---------- 로그인 ---------- */
+  #screen-login.active{
+    min-height:84vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:radial-gradient(ellipse 640px 420px at 50% 38%, var(--accent-soft) 0%, rgba(252,230,212,0) 72%);
+    margin:-28px -20px 0;
+    padding:28px 20px 0;
+  }
+  .login-box{
+    width:100%;
+    max-width:380px;
+    padding:44px 38px 38px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow-md);
+    position:relative;
+    overflow:hidden;
+  }
+  .login-box::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:4px;
+    background:linear-gradient(90deg, var(--accent) 0%, var(--accent-deep) 100%);
+  }
+  .login-box .eyebrow{
+    font-size:12px;
+    color:var(--accent-deep);
+    font-weight:600;
+    margin-bottom:10px;
+    letter-spacing:0.02em;
+  }
+  .login-box h1{
+    font-family:var(--font-brand);
+    font-weight:400;
+    font-size:26px;
+    margin:0 0 8px;
+    letter-spacing:0;
+  }
+  .login-box p.desc{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+    line-height:1.6;
+  }
+  .field{ margin-bottom:16px; }
+  .field label{
+    display:block;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .field input{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:14.5px;
+    font-family:inherit;
+    background:#FFFEFC;
+  }
+  .field input:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .login-box button.submit{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border:none;
+    border-radius:9px;
+    background:var(--ink);
+    color:#fff;
+    font-size:14.5px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(43,38,34,0.18);
+    transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+  }
+  .login-box button.submit:hover{
+    background:var(--accent-deep);
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-1px);
+  }
+  .login-box button.submit:active{ transform:translateY(0); }
+  .login-error{
+    margin-top:14px;
+    font-size:12.5px;
+    color:#B34747;
+    display:none;
+  }
+
+  /* ---------- 리스트 ---------- */
+  .group-tabs{
+    display:flex;
+    gap:4px;
+    margin:24px 0 22px;
+    flex-wrap:wrap;
+    background:#F2ECE1;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:5px;
+  }
+  .group-tab{
+    padding:8px 16px;
+    border:none;
+    border-radius:8px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+    cursor:pointer;
+    background:transparent;
+    transition:all .15s ease;
+  }
+  .group-tab:hover{ color:var(--accent-deep); }
+  .group-tab.active{
+    background:var(--ink);
+    color:#fff;
+    box-shadow:0 3px 8px -2px rgba(43,38,34,0.32);
+  }
+  .group-tab.active:hover{ color:#fff; }
+  .list-meta{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .cand-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:12px;
+  }
+  .cand-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+    cursor:pointer;
+    box-shadow:var(--shadow-sm);
+    transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .cand-card:hover{
+    border-color:var(--accent);
+    box-shadow:var(--shadow-md);
+    transform:translateY(-2px);
+  }
+  .cand-card .cc-head{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-bottom:2px;
+  }
+  .cand-card .avatar{
+    width:38px; height:38px;
+    border-radius:10px;
+    background:linear-gradient(135deg, var(--accent-soft) 0%, #F3D9BC 100%);
+    color:var(--accent-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-brand);
+    font-size:15px;
+    flex-shrink:0;
+  }
+  .cand-card .name{
+    font-family:var(--font-brand);
+    font-size:18px;
+    font-weight:400;
+  }
+  .cand-card .meta{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .cand-card .status-row{
+    display:flex;
+    gap:6px;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+  .pill{
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:999px;
+    background:#F4F0E9;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+  .pill.done{
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    border-color:var(--accent-soft);
+  }
+
+  /* ---------- 상세 ---------- */
+  .detail-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:1px solid var(--line);
+    padding-bottom:16px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .detail-head h2{
+    font-family:var(--font-brand);
+    font-weight:400;
+    font-size:30px;
+    margin:0;
+    letter-spacing:0;
+  }
+  .detail-head .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .detail-head .tagtype{
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    font-weight:600;
+    white-space:nowrap;
+  }
+
+  .section{ margin-bottom:30px; }
+  .section h3{
+    font-size:14px;
+    margin:0 0 12px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section h3::before{
+    content:"";
+    width:4px;
+    height:14px;
+    background:var(--accent);
+    border-radius:2px;
+    display:inline-block;
+  }
+
+  /* ---------- 2단 레이아웃 ---------- */
+  .detail-layout{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:22px;
+    align-items:start;
+  }
+  .detail-main{ min-width:0; }
+  .detail-side{ position:relative; }
+  .interview-panel{
+    position:sticky;
+    top:20px;
+    border-color:var(--accent);
+  }
+  .interview-panel::before{
+    height:4px;
+    background:linear-gradient(90deg, var(--accent) 0%, var(--accent-deep) 100%);
+  }
+
+  .panel{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 22px 20px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow-sm);
+    position:relative;
+    overflow:hidden;
+  }
+  .panel::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--accent) 0%, var(--accent-deep) 60%, transparent 100%);
+  }
+  .panel h3{
+    font-size:13.5px;
+    margin:0 0 14px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .panel h3::before{
+    content:"";
+    width:4px;
+    height:13px;
+    background:var(--accent);
+    border-radius:2px;
+    display:inline-block;
+  }
+  .panel-subhead{
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink-soft);
+    margin:18px 0 10px;
+    padding-top:14px;
+    border-top:1px dashed var(--line);
+  }
+
+  @media (max-width:680px){
+    .detail-layout{ grid-template-columns:1fr; }
+    .interview-panel{ position:static; }
+  }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+  .info-cell{
+    background:#fff;
+    padding:11px 14px;
+  }
+  .info-cell .k{
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:3px;
+  }
+  .info-cell .v{
+    font-size:13.5px;
+    font-weight:600;
+  }
+
+  table.evtable{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    font-size:13px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+  table.evtable th, table.evtable td{
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+    padding:11px 10px;
+    text-align:center;
+  }
+  table.evtable th:last-child, table.evtable td:last-child{ border-right:none; }
+  table.evtable tbody tr td{ border-bottom:none; }
+  table.evtable th{
+    background:#F7F3EC;
+    color:var(--ink-soft);
+    font-weight:600;
+    font-size:11.5px;
+    letter-spacing:0.01em;
+  }
+  table.evtable td.empty{ color:#C9C0B3; }
+
+  .interview-form{
+    padding:0;
+  }
+  .iform-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+    margin-bottom:14px;
+  }
+  .iform-row label{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .iform-row select, .iform-row textarea{
+    width:100%;
+    padding:9px 11px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:13.5px;
+    font-family:inherit;
+    background:#FFFEFC;
+  }
+  .iform-row textarea{ resize:vertical; min-height:64px; }
+  .iform-row select:focus, .iform-row textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .iform-actions{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:6px;
+  }
+  .btn-outline{
+    padding:11px 18px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:#fff;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .btn-outline:hover{ border-color:var(--ink-soft); color:var(--ink); }
+  .btn-save{
+    padding:11px 22px;
+    border:none;
+    border-radius:8px;
+    background:var(--ink);
+    color:#fff;
+    font-size:13.5px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(43,38,34,0.16);
+    transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+  }
+  .btn-save:hover{
+    background:var(--accent-deep);
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-1px);
+  }
+  .btn-save:active{ transform:translateY(0); }
+  .save-note{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:10px;
+    text-align:right;
+  }
+  .save-note.ok{ color:#2E8B57; font-weight:600; }
+  .save-note.err{ color:#B34747; font-weight:600; }
+
+  .empty-hint{
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:30px 0;
+    text-align:center;
+  }
+
+  /* ---------- 평가등급 흐름 ---------- */
+  .grade-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .grade-chip{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 16px;
+    box-shadow:var(--shadow-sm);
+    min-width:88px;
+    text-align:center;
+  }
+  .grade-chip .yr{
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .grade-chip .val{
+    font-family:var(--font-brand);
+    font-size:20px;
+  }
+  .grade-chip .val.na{
+    font-family:var(--font-body);
+    font-size:13px;
+    color:#C9C0B3;
+  }
+  .grade-chip.multi .val{ font-size:15px; font-family:var(--font-body); font-weight:600; }
+  .grade-chip.g-a{ border-color:#2E8B57; background:#EEF7F0; }
+  .grade-chip.g-a .val{ color:#2E8B57; }
+  .grade-chip.g-bp{ border-color:var(--accent); background:var(--accent-soft); }
+  .grade-chip.g-bp .val{ color:var(--accent-deep); }
+  .grade-chip.g-low{ border-color:#D79C93; background:#FBEEEC; }
+  .grade-chip.g-low .val{ color:#B34747; }
+
+  /* ---------- 월별피드백 ---------- */
+  .month-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .month-pill{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:12px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    text-align:center;
+    min-width:64px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .month-pill b{
+    display:block;
+    font-size:13px;
+    color:var(--ink);
+    margin-bottom:3px;
+  }
+  .month-pill:hover{ border-color:var(--accent); }
+  .month-pill.open{ background:var(--accent-soft); border-color:var(--accent); }
+
+  .month-block{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:10px;
+    box-shadow:var(--shadow-sm);
+  }
+  .month-block .mb-head{
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    color:var(--ink);
+  }
+  .month-block .mb-head span{ color:var(--ink-soft); font-weight:500; font-size:12px; }
+  .fb-sub{
+    margin-bottom:12px;
+  }
+  .fb-sub .fb-title{
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent-deep);
+    margin-bottom:5px;
+  }
+  .fb-pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .fb-pair .fb-col{
+    background:#FBF8F3;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 11px;
+  }
+  .fb-pair .fb-col .fb-who{
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .fb-pair .fb-col .fb-grade{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    padding:1px 7px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    margin-left:4px;
+  }
+  .fb-pair .fb-col .fb-text{
+    font-size:12.5px;
+    white-space:pre-wrap;
+    line-height:1.6;
+    margin-top:5px;
+  }
+
+  /* ---------- 포상/징계 ---------- */
+  .award-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .award-chip{
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:12.5px;
+    max-width:340px;
+  }
+  .award-chip .aw-name{ font-weight:700; }
+  .award-chip .aw-date{ font-size:11px; opacity:.8; margin-left:4px; }
+  .award-chip.disc{ background:#F5E4E0; color:#A24A3E; }
+
+  @media (max-width:640px){
+    .info-grid{ grid-template-columns:repeat(2,1fr); }
+    .iform-row{ grid-template-columns:1fr; }
+    .fb-pair{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header id="global-nav">
+  <div class="navbar-inner">
+    <div class="brand">
+      <div class="brand-mark">DB</div>
+      <div class="brand-text">
+        <div class="b-main">직무급 재평가 면접자료</div>
+        <div class="b-sub">대웅바이오 · 2026년 10월</div>
+      </div>
+    </div>
+    <div class="nav-user" id="nav-user" style="display:none;">
+      <span><b id="who-name"></b>님</span>
+      <button onclick="logout()">로그아웃</button>
+    </div>
+  </div>
+</header>
+
+<div class="stage">
+
+  <!-- ================= 로그인 ================= -->
+  <section id="screen-login" class="screen active">
+    <div class="login-box">
+      <div class="eyebrow">대웅바이오 · 직무급 재평가</div>
+      <h1>면접 참고자료 열람</h1>
+      <p class="desc">2026년 10월 직무재평가, 담당 그룹 대상자만 조회됩니다.</p>
+      <div class="field">
+        <label for="in-name">이름</label>
+        <input id="in-name" type="text" placeholder="예: 김민서" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="in-sabun">사번</label>
+        <input id="in-sabun" type="text" placeholder="사번 7자리" autocomplete="off">
+      </div>
+      <button class="submit" onclick="tryLogin()">조회하기</button>
+      <div class="login-error" id="login-error">이름 또는 사번이 일치하지 않습니다. 다시 확인해주세요.</div>
+    </div>
+  </section>
+
+  <!-- ================= 리스트 ================= -->
+  <section id="screen-list" class="screen">
+    <div class="group-tabs" id="group-tabs"></div>
+    <div class="list-meta" id="list-meta"></div>
+    <div class="cand-grid" id="cand-grid"></div>
+  </section>
+
+  <!-- ================= 상세 ================= -->
+  <section id="screen-detail" class="screen">
+    <div class="back-link" onclick="showList()">&larr; 대상자 목록으로</div>
+
+    <div class="detail-head">
+      <div>
+        <h2 id="d-name"></h2>
+        <div class="sub" id="d-sub"></div>
+      </div>
+      <div class="tagtype" id="d-tag"></div>
+    </div>
+
+    <div class="detail-layout">
+      <div class="detail-main">
+
+        <div class="panel">
+          <h3>기본 정보</h3>
+          <div class="info-grid" id="d-info"></div>
+          <div class="panel-subhead">지원직무</div>
+          <div class="info-grid" id="d-apply"></div>
+        </div>
+
+        <div class="panel">
+          <h3>평가등급 흐름</h3>
+          <div class="grade-row" id="d-grades"></div>
+        </div>
+
+        <div class="panel" id="section-monthly" style="display:none;">
+          <h3>월별피드백</h3>
+          <div class="month-strip" id="d-month-strip"></div>
+          <div id="d-month-accordion"></div>
+        </div>
+
+        <div class="panel" id="section-awards" style="display:none;">
+          <h3>포상 · 징계 이력</h3>
+          <div class="award-row" id="d-awards"></div>
+        </div>
+
+      </div>
+
+      <div class="detail-side">
+        <div class="panel interview-panel">
+          <h3 id="d-interview-title">면접 결과 입력</h3>
+          <div class="interview-form">
+            <div class="iform-row">
+              <label id="f-label">심층면접</label>
+              <select id="f-result">
+                <option value="">선택</option>
+                <option value="합격">합격</option>
+                <option value="불합격">불합격</option>
+              </select>
+            </div>
+            <div class="iform-row">
+              <label>코멘트</label>
+              <textarea id="f-note" placeholder="면접 중 참고사항을 남겨주세요"></textarea>
+            </div>
+            <div class="iform-actions">
+              <button class="btn-outline" onclick="saveInterview()">저장</button>
+              <button class="btn-save" onclick="submitInterview()">제출</button>
+            </div>
+            <div class="save-note" id="save-note"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+const CANDIDATES = [{"group": 4, "면접유형": "심층면접", "사번": "2601833", "성명": "민슬기", "입사일_그룹": "2022-06-02 00:00:00", "입사일_바이오": "2026-08-20 00:00:00", "근속_그룹": "4년 3개월", "근속_바이오": 0, "경력": "4년", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "바이오R&D센터", "팀": "바이오공정팀", "직책자": "배상우", "직책": "팀원", "현직무": "잡매니저(어쏘) R", "현직무발령일": "", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "요청", "다면25상": "", "다면25하": "", "2026종합": "요청", "다면26상": "94% / 0%"}, {"group": 4, "면접유형": "심층면접", "사번": "2601852", "성명": "김재권", "입사일_그룹": "2025-08-11 00:00:00", "입사일_바이오": "2026-08-20 00:00:00", "근속_그룹": "1년 0개월", "근속_바이오": 0, "경력": "7년 11개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오R&D센터", "팀": "바이오신약팀", "직책자": "장희정", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-08-11 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "요청", "다면25상": "", "다면25하": "", "2026종합": "요청", "다면26상": "100% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3080303", "성명": "박주남", "입사일_그룹": "2008-03-03 00:00:00", "입사일_바이오": "2008-03-03 00:00:00", "근속_그룹": "18년 6개월", "근속_바이오": 221, "경력": "", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오생산관리팀", "직책자": "박주남", "직책": "팀장대행", "현직무": "잡매니저 매니저", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "85% / 0%"}, {"group": 3, "면접유형": "심층면접", "사번": "2500869", "성명": "박정은", "입사일_그룹": "2025-11-17 00:00:00", "입사일_바이오": "2025-11-17 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "3년 11개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오QC팀", "직책자": "박상익", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-17 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "87% / 3%"}, {"group": 3, "면접유형": "심층면접", "사번": "2500875", "성명": "이상원", "입사일_그룹": "2025-11-24 00:00:00", "입사일_바이오": "2025-11-24 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "5년", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "MSAT팀", "직책자": "김상필", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-24 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "88% / 0%"}, {"group": 3, "면접유형": "심층면접", "사번": "2600500", "성명": "박만춘", "입사일_그룹": "2026-01-12 00:00:00", "입사일_바이오": "2026-01-12 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "4년 1개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오QC팀", "직책자": "박상익", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-12 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "85% / 2%"}, {"group": 3, "면접유형": "심층면접", "사번": "2600687", "성명": "박진호", "입사일_그룹": "2026-03-16 00:00:00", "입사일_바이오": "2026-03-16 00:00:00", "근속_그룹": "0년 5개월", "근속_바이오": 5, "경력": "6년 7개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오제품팀", "직책자": "김진수", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-03-16 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "88% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3240806", "성명": "이호연", "입사일_그룹": "2006-11-08 00:00:00", "입사일_바이오": "2024-08-01 00:00:00", "근속_그룹": "19년 10개월", "근속_바이오": 25, "경력": "", "학력": "고등학교", "본부실": "연구생산본부", "센터사업부": "세파센터", "팀": "세파생산관리팀", "직책자": "이호연", "직책": "팀장대행", "현직무": "잡매니저 어쏘", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "89% / 2%"}, {"group": 6, "면접유형": "심층면접", "사번": "2501052", "성명": "윤주완", "입사일_그룹": "2025-12-01 00:00:00", "입사일_바이오": "2025-12-01 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "6년 1개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "세파센터", "팀": "세파QC팀", "직책자": "이호명", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-12-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "78% / 1%"}, {"group": 6, "면접유형": "심층면접", "사번": "2501153", "성명": "박승현", "입사일_그룹": "2026-01-05 00:00:00", "입사일_바이오": "2026-01-05 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 7, "경력": "6년 4개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "세파센터", "팀": "세파QC팀", "직책자": "이호명", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-05 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "88% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3250116", "성명": "박상호", "입사일_그룹": "1997-01-13 00:00:00", "입사일_바이오": "2025-01-01 00:00:00", "근속_그룹": "29년 7개월", "근속_바이오": 20, "경력": "", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "안성센터", "팀": "안성위수탁팀", "직책자": "박상호", "직책": "팀장", "현직무": "팀장®", "현직무발령일": "2025-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "62% / 2%"}, {"group": 5, "면접유형": "심층면접", "사번": "2500966", "성명": "옥창현", "입사일_그룹": "2025-11-24 00:00:00", "입사일_바이오": "2025-11-24 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "4년 9개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "안성센터", "팀": "안성QC팀", "직책자": "정대웅", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-24 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "46% / 1%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3080306", "성명": "이상호", "입사일_그룹": "2008-03-03 00:00:00", "입사일_바이오": "2008-03-03 00:00:00", "근속_그룹": "18년 6개월", "근속_바이오": 221, "경력": "", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "원료센터", "팀": "원료생산1팀", "직책자": "이상호", "직책": "팀장대행", "현직무": "잡매니저 멘토", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "A", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "94% / 0%"}, {"group": 7, "면접유형": "심층면접", "사번": "2501053", "성명": "김주영", "입사일_그룹": "2025-12-29 00:00:00", "입사일_바이오": "2025-12-29 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 8, "경력": "2년 2개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "원료센터", "팀": "원료QC팀", "직책자": "김대광", "직책": "팀원", "현직무": "어쏘©", "현직무발령일": "2025-12-29 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "어쏘", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "81% / 0%"}, {"group": 7, "면접유형": "심층면접", "사번": "3230106", "성명": "옥성민", "입사일_그룹": "2023-01-16 00:00:00", "입사일_바이오": "2023-01-16 00:00:00", "근속_그룹": "3년 7개월", "근속_바이오": 43, "경력": "", "학력": "", "본부실": "연구생산본부", "센터사업부": "원료센터", "팀": "원료생산관리팀", "직책자": "신인선", "직책": "팀원", "현직무": "잡멘토 어쏘®", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "93% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "2500717", "성명": "최민석", "입사일_그룹": "2025-09-22 00:00:00", "입사일_바이오": "2025-09-22 00:00:00", "근속_그룹": "0년 11개월", "근속_바이오": 11, "경력": "", "학력": "대학원(박사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구센터", "직책자": "", "직책": "센터장", "현직무": "센터장®", "현직무발령일": "2025-09-22 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "89% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "2500721", "성명": "유민영", "입사일_그룹": "2025-09-24 00:00:00", "입사일_바이오": "2025-09-24 00:00:00", "근속_그룹": "0년 11개월", "근속_바이오": 11, "경력": "", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구팀", "직책자": "유민영", "직책": "팀장", "현직무": "팀장®", "현직무발령일": "2025-09-24 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "95% / 0%"}, {"group": 4, "면접유형": "심층면접", "사번": "2501206", "성명": "홍지민", "입사일_그룹": "2025-12-23 00:00:00", "입사일_바이오": "2025-12-23 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 8, "경력": "12년 11개월", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구팀", "직책자": "유민영", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-12-23 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡매니저(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "97% / 1%"}, {"group": 4, "면접유형": "심층면접", "사번": "2501207", "성명": "양다아", "입사일_그룹": "2026-01-12 00:00:00", "입사일_바이오": "2026-01-12 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "3년 9개월", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구팀", "직책자": "유민영", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-12 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "79% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3230505", "성명": "강의수", "입사일_그룹": "2023-05-15 00:00:00", "입사일_바이오": "2023-05-15 00:00:00", "근속_그룹": "3년 3개월", "근속_바이오": 39, "경력": "", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "합성연구센터", "팀": "CDMO팀", "직책자": "강의수", "직책": "팀장대행", "현직무": "잡매니저 멘토", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "95% / 0%"}, {"group": 9, "면접유형": "심층면접", "사번": "2600077", "성명": "정혜민", "입사일_그룹": "2026-01-26 00:00:00", "입사일_바이오": "2026-01-26 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "박사신입", "학력": "대학원(박사)", "본부실": "연구생산본부", "센터사업부": "합성연구센터", "팀": "CDMO팀", "직책자": "강의수", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-26 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "97% / 0%"}, {"group": 9, "면접유형": "심층면접", "사번": "2600665", "성명": "최윤지", "입사일_그룹": "2026-03-09 00:00:00", "입사일_바이오": "2026-03-09 00:00:00", "근속_그룹": "0년 5개월", "근속_바이오": 5, "경력": "3년 4개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "합성연구센터", "팀": "분석기획팀", "직책자": "홍중연", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-03-09 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "100% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3160102", "성명": "이유경", "입사일_그룹": "2010-06-07 00:00:00", "입사일_바이오": "2016-01-01 00:00:00", "근속_그룹": "16년 3개월", "근속_바이오": 128, "경력": "", "학력": "대학", "본부실": "마케팅본부", "센터사업부": "", "팀": "디지털사업팀", "직책자": "이유경", "직책": "팀장대행", "현직무": "잡매니저 어쏘", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "83% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3200401", "성명": "고재호", "입사일_그룹": "2020-04-01 00:00:00", "입사일_바이오": "2020-04-01 00:00:00", "근속_그룹": "6년 5개월", "근속_바이오": 77, "경력": "", "학력": "대학", "본부실": "마케팅본부", "센터사업부": "", "팀": "순환기팀", "직책자": "고재호", "직책": "팀장대행", "현직무": "잡매니저 멘토", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "A", "다면25상": "", "다면25하": "", "2026종합": "A", "다면26상": "85% / 0%"}, {"group": 8, "면접유형": "유관본부면접", "사번": "3240903", "성명": "한승희", "입사일_그룹": "2024-09-02 00:00:00", "입사일_바이오": "2024-09-02 00:00:00", "근속_그룹": "2년 0개월", "근속_바이오": 23, "경력": "8년 3개월", "학력": "대학원(석사)", "본부실": "마케팅본부", "센터사업부": "", "팀": "내분비팀", "직책자": "한승희", "직책": "팀장대행", "현직무": "잡매니저 어쏘", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "팀장 이상 재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "A", "다면25상": "", "다면25하": "", "2026종합": "A", "다면26상": "100% / 0%"}, {"group": 2, "면접유형": "심층면접", "사번": "2500857", "성명": "이환구", "입사일_그룹": "2025-11-03 00:00:00", "입사일_바이오": "2025-11-03 00:00:00", "근속_그룹": "0년 10개월", "근속_바이오": 9, "경력": "13년 6개월", "학력": "대학원(석사)", "본부실": "개발본부", "센터사업부": "", "팀": "개발팀", "직책자": "이지현", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-03 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡매니저(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "A", "다면26상": "74% / 0%"}, {"group": 2, "면접유형": "심층면접", "사번": "2500858", "성명": "이하연", "입사일_그룹": "2025-11-03 00:00:00", "입사일_바이오": "2025-11-03 00:00:00", "근속_그룹": "0년 10개월", "근속_바이오": 9, "경력": "6년", "학력": "대학", "본부실": "개발본부", "센터사업부": "", "팀": "개발팀", "직책자": "이지현", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-03 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "85% / 0%"}, {"group": 2, "면접유형": "심층면접", "사번": "2600786", "성명": "김지혜", "입사일_그룹": "2012-08-01 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "14년 1개월", "근속_바이오": 5, "경력": "", "학력": "초대전문대", "본부실": "대표이사직속", "센터사업부": "", "팀": "인사팀", "직책자": "", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "", "다면24상": "", "다면24하": "", "2025종합": "", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "98% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600495", "성명": "이원규", "입사일_그룹": "2026-02-02 00:00:00", "입사일_바이오": "2026-02-02 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 6, "경력": "17년 10개월", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "CNE사업부", "팀": "CNE영업지점", "직책자": "장훈", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "A", "다면26상": "95% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600822", "성명": "김지훈", "입사일_그룹": "2023-06-01 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "3년 3개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "로컬사업부", "팀": "로컬지방1지점", "직책자": "모진종", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "B", "다면24상": "", "다면24하": "", "2025종합": "C", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "95% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600496", "성명": "김병욱", "입사일_그룹": "2026-02-02 00:00:00", "입사일_바이오": "2026-02-02 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 6, "경력": "12년 3개월", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원경강사업부", "팀": "병원경인지점", "직책자": "유재인", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-02-02 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "91% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600027", "성명": "홍명진", "입사일_그룹": "2026-01-05 00:00:00", "입사일_바이오": "2026-01-05 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 7, "경력": "11년", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울2지점", "직책자": "백정우", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-05 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "비대상", "다면24상": "", "다면24하": "", "2025종합": "비대상", "다면25상": "", "다면25하": "", "2026종합": "B+", "다면26상": "98% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600818", "성명": "국경호", "입사일_그룹": "2003-01-23 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "23년 7개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울1지점", "직책자": "최진원", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "A", "다면24상": "", "다면24하": "", "2025종합": "B+", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "96% / 0%"}, {"group": 1, "면접유형": "심층면접", "사번": "2600817", "성명": "조석현", "입사일_그룹": "2010-01-21 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "16년 7개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울1지점", "직책자": "최진원", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "2024종합": "B", "다면24상": "", "다면24하": "", "2025종합": "D", "다면25상": "", "다면25하": "", "2026종합": "B", "다면26상": "평가자수4인미만"}];
+const ROSTER = [{"name": "김민서", "sabun": "2210534", "groups": [1, 2, 3, 4, 5, 6, 7, 8, 9]}, {"name": "백정우", "sabun": "3151017", "groups": [1]}, {"name": "박정호", "sabun": "3220501", "groups": [1]}, {"name": "유재인", "sabun": "3160902", "groups": [1]}, {"name": "이지현", "sabun": "3160907", "groups": [2]}, {"name": "이준석", "sabun": "3220704", "groups": [2]}, {"name": "이지훈", "sabun": "2500876", "groups": [2]}, {"name": "박진우", "sabun": "3120103", "groups": [2]}, {"name": "고재호", "sabun": "3200401", "groups": [2]}, {"name": "박주남", "sabun": "3080303", "groups": [3]}, {"name": "이호진", "sabun": "3230701", "groups": [3]}, {"name": "이우식", "sabun": "3240505", "groups": [3]}, {"name": "한희", "sabun": "3240608", "groups": [3]}, {"name": "배상우", "sabun": "2601831", "groups": [4]}, {"name": "최민석", "sabun": "2500717", "groups": [4]}, {"name": "유민영", "sabun": "2500721", "groups": [4]}, {"name": "박민선", "sabun": "2601855", "groups": [4]}, {"name": "장희정", "sabun": "2601854", "groups": [4]}, {"name": "신익범", "sabun": "3230407", "groups": [5]}, {"name": "김장호", "sabun": "3230609", "groups": [5]}, {"name": "김광춘", "sabun": "3160716", "groups": [5]}, {"name": "손은희", "sabun": "3200406", "groups": [5]}, {"name": "정대웅", "sabun": "3191102", "groups": [5]}, {"name": "이호연", "sabun": "3240806", "groups": [6]}, {"name": "이상민", "sabun": "3231001", "groups": [6]}, {"name": "김윤철", "sabun": "3241002", "groups": [6]}, {"name": "이호명", "sabun": "3181140", "groups": [6]}, {"name": "윤종환", "sabun": "3250301", "groups": [6]}, {"name": "신인선", "sabun": "3030401", "groups": [7]}, {"name": "김영민", "sabun": "3200706", "groups": [9]}, {"name": "홍중연", "sabun": "3210304", "groups": [9]}, {"name": "김대광", "sabun": "3070702", "groups": [7]}, {"name": "정윤미", "sabun": "3160702", "groups": [8]}, {"name": "유영기", "sabun": "3180109", "groups": [8]}, {"name": "편도규", "sabun": "3200301", "groups": [8]}, {"name": "김병구", "sabun": "3080301", "groups": [7]}, {"name": "강동훈", "sabun": "3031202", "groups": [7]}, {"name": "강의수", "sabun": "3230505", "groups": [9]}];
+const GROUP_NAMES = {"1": "CNS서울영업본부", "2": "개발본부·대표이사직속", "3": "바이오센터", "4": "바이오R&D센터·제제연구센터", "5": "안성센터", "6": "세파센터", "7": "원료센터", "8": "본부장·유관본부 전담", "9": "합성연구센터"};
+const PERSONNEL_CARDS = {"3240806": {"사원번호": "3240806", "회사": "대웅바이오(주)", "부서": "세파센터", "생년월일": "1985-02-28", "직함": "세파생산관리팀 팀장", "직무": "잡매니저-어쏘", "당사입사일": "2024.08.01", "그룹입사일": "2006.11.08", "근속기간_그룹": "19년 10개월 1일", "근속기간_당사": "2년 1개월 8일", "학력사항": [{"학교": "수원고등학교", "전공": "", "학위": "고등학교", "입학일": "2000.03.01", "졸업일": "2003.02.01"}], "경력사항": [{"회사": "(주)대웅제약", "직함": "-", "시작일": "2006.11.08", "종료일": "2024.07.31", "인정기간": "17년 8개월", "담당업무": "생산"}], "평가결과": [{"연도": "2026", "평가유형": "종합평가", "등급": "B", "부서": "세파센터", "평가자": "이상민"}, {"연도": "2025", "평가유형": "종합평가", "등급": "A", "부서": "세파생산팀", "평가자": "김윤철"}, {"연도": "2025", "평가유형": "종합평가", "등급": "B+", "부서": "세파생산관리팀", "평가자": "김윤철"}, {"연도": "2024", "평가유형": "종합평가", "등급": "B+", "부서": "(주)대웅바이오", "평가자": "편도규"}], "포상이력": [{"포상명": "24년4Q S등급", "포상일자": "2025.01.10", "포상내용": "세파 신공장 투자 예산내의 컨셉을 재 확립 제조경쟁력 향상"}], "징계이력": [], "발령이력": [{"발령일": "2026.04.01", "발령유형": "승진", "발령사유": "승진", "부서": "세파센터", "직책": "팀장/소장", "직무": "잡매니저-어쏘"}, {"발령일": "2025.11.01", "발령유형": "이동", "발령사유": "부서이동", "부서": "세파생산관리팀", "직책": "팀원", "직무": "잡매니저-어쏘"}, {"발령일": "2025.04.01", "발령유형": "이동", "발령사유": "조직개편", "부서": "세파생산팀", "직책": "팀원", "직무": "잡매니저-어쏘"}, {"발령일": "2025.02.03", "발령유형": "직무변경", "발령사유": "인사시스템 이전", "부서": "세파생산팀", "직책": "팀원", "직무": "잡매니저-어쏘"}, {"발령일": "2025.02.01", "발령유형": "이동", "발령사유": "부서이동", "부서": "세파생산팀", "직책": "팀원", "직무": "잡매니저-어쏘"}, {"발령일": "2024.08.01", "발령유형": "입사", "발령사유": "관계사전입", "부서": "성남생산팀", "직책": "팀원", "직무": "잡매니저 어쏘"}]}};
+const MONTHLY_FEEDBACK = {"3240806": [{"month": 1, "evaluator": "Yun Cheol Kim （김윤철）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 15.8억확보( 기존 15억+ 추가 0.8억 (팜젠사이언스)) \n    - 주단위 지역별 업체 방문 및 점심식사 전화 & 메일등 병렬 소통 진행\n 2) 신규처 매출 확보\n    ①4처 42억 확보 삼성제약(16억), 이든파마(6억), 제뉴파마(12억) \n       → 품의진행중으로 2월내에 계약 진행 예정\n    ②한국 프라임 제약 단가협의를 통한 수탁처 추가 허여 소통 완료(기존2처 → 3처)\n    ③신규 생동처 확보를 위한 대화제약 미팅 진행 완료(제조방법 및 원약 분량 이슈 없음)\n      → 현재 아주약품 생동허여로 화일약품 위탁 진행중으로, 향후 아주약품 제조소 이전\n         진행시 긍정적으로 이전 검토(생동 비교 용출 대체 가능 QA 지속 소통 예정)\n 3) 안성 위수탁팀 Co-Work을 통한 신규 수탁사 발굴(동구바이오 뉴록심정)\n \n2. 칭량 RWS, 물류 WMS \n 1) 시클러MR서방정  PV1차 RWS  Process를 통한 생산 완료\n    →이슈 사항 업체와의 소통을 통한 해결 완료\n 2) WMS CSV와 관련하여 MES와 동시 진행 이점 없음\n    →WMS Go-Live 기존 계획대로 진행예정(2026년05월)\n3.생산관리&지원\n 1)뉴디짐주 허가 정리를 위한 법무팀 소통 \n    ① 국내 법무팀 1차 검토 완료\n    ② 준거법에 의거하여 재 검토를 위한 해외 법무법인 의뢰 완료(추가 요청사항 전달)", "mgr_grade": "B+", "mgr_text": "1. 수탁 매출 증대\n  -기존처 PO 15.8억 확보(기존 15억 + 추가 0.8억, 팜젠사이언스)\n  - 신규처 4처 42억 확보: 삼성제약 16억, 이든파마 6억, 제뉴파마 12억 → \n     2월 내 계약 예정\n  - 한국프라임제약 단가협의 완료, 수탁처 2→3처 확대\n  - 대화제약·아주약품 생동허여 및 제조소 이전 검토 진행\n  - 안성 위수탁팀과 Co-Work을 통한 신규 수탁사 발굴(동구바이오 뉴록심정)\n2. 칭량 RWS, 물류 WMS\n  - 시클러 MR 서방정 PV1차 RWS Process 적용 후 생산 완료, 이슈 업체와\n    소통 후 해결\n  - WMS CSV와 MES 동시 진행 불필요 판단, WMS Go-Live 2026년 5월 예정\n3. 생산관리·지원\n  - 뉴디짐주 허가 관련 법무팀 소통 / 국내 1차 검토 완료\n  - 해외 법무법인 재검토 의뢰 완료\n  - 손익분석 및 계약 품의 관련 자료 마련, 사업 타당성 검토 진행"}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 신규 수탁처 계약 진행을 위하여 품의를 진행하였으나, 손익분석\n   에 대한 명확한 설명 및 사업의 타당성에 대한 구체적인 자료가\n   부족함, 기획팀과 소통을 통하여 해당 자료를 신속하게 마련하여\n   결제 품의 진행시 이슈가 없도록 관리가 필요함. \n2. 뉴디짐 법무팀 검토 결과 손해배상청구의 가능성은 존재하나\n   추가적인 자료를 토대로 추가 검토가 필요함.\n   추가 필요 자료였던, GP社와의 공문 및 메일에 대한 히스토리가\n   관리되지 않아 면책을 위한 자료가 부족함.\n   이번 이슈를 계기로 대웅바이오에서 공식적으로 진행되는 공문에\n   대한 관리가 필요함.", "mgr_grade": "B+", "mgr_text": "1. 금번 직무급 심의 팀장 발탁 진행예정으로 사전 자료 준비해주시고,\n   더불어 2월부터는 생산관리 팀원 목표수립과 월별피드백 직접 수행하여\n   팀원들을 리딩하여 주시길 바랍니다.\n2. 수탁매출 증대\n - 신규 수탁처 결제 품의 진행 및 계약 완료\n3. 생산·허가 관리\n - 넥스팜코리아(시클러캡슐) 생산 개시, 허가 진행 상황 모니터링, \n    업체와 납기 일정 조율\n4. 뉴디짐주 계약서 검토 완료 후 진행 방향 설정, 2026년 허가 만료일 대비 계획\n5. 문서·자료 관리\n  - 수탁 계약 관련 공문·메일 히스토리 체계적 관리 → 면책 자료 확보\n  - 손익분석 자료 및 사업 타당성 자료 기획팀과 협업하여 품의 시 이슈 방지"}]}, {"month": 2, "evaluator": "Yun Cheol Kim （김윤철）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 15.8억확보(2월내 추가 PO 확보 없음) \n    - 주단위 지역별 업체 방문 및 점심식사 전화 & 메일등 병렬 소통 진행\n    - 안티러캡슐 12월 PO → 3월 PO로 변경하여 3월 매출 확보(전체 매출 영향 없음)\n       * 허가 일정 변경(기존 8월 → 변경 6월)에 따라 신규 수탁사 확보 가능\n 2) 신규처 매출 확보\n   ①시클러캡슐 이슈 발생에 따른 전략 수정( 자사 허여X → 프라임 제약 허여)\n      - 삼성제약 소통 완료 및 계약 유지 의견으로 소통함.\n      - 추가 2처에 대하여 이든파마(6억), 제뉴파마(12억) , 구주제약(6억) 컨택중\n   ②한국 프라임 제약 단가협의를 통한 수탁처 추가 허여 소통 완료(기존2처 → 3처)\n      - 내부 결제 품의 완료 및 공문 프라임제약 회신 → 프라임제약 내부 품의 후 계약 체결 예정\n   ③신규 생동처 확보를 위한 아주약품 미팅 진행 완료(제조방법 및 원약 분량 이슈 없음)\n      - 아주약품 생동처로 화일약품 위탁 진행중으로 확인함. 최저가 제안으로 긍정적인 회신받음.\n       (생동 비교 용출 대체 가능 QA 지속 소통 예정)\n   ④세프디니르 베트남 수출용(아주) 검토중으로 2월28일까지 답변 예정\n \n2.미래성장동력\n  - 변화혁신과제 과제 및 리더1건/ 멤버2건 참여\n    → 변화 혁신 과제 2건 \"수동세척표준화\"&\"시클러캡슐 원가 절감\" 멤버 선정완료(함가은.안병돈)\n       세파센터 홍보자료 과제 리더 역활 수행(전현준)\n3. 핵심인재 육성(3명)\n 1) SOP 영문화 (안병돈)\n    →SOP별 담당자 선정 및 주단위 일정 관리, 진행율 20% 완료(2월28일 완료 예정) \n 2) 업무 R&R을 통한 전문성 강화(전현준&함가은)\n   중첩되는 업무에 대하여 R&R을 수립하고, 담당자별 업무 재 분배하여, 전문성을 강화 예정\n4. 핵심가치\n 1) 원가 분석 및 시물레이션을 통한 수탁 영업 활성화 1건 칭찬 사례로 연걸", "mgr_grade": "B+", "mgr_text": "2월은 수탁 매출 방어와 신규 거래처 확대를 병행한 한 달이었습니다. 기존 PO 15.8억을 확보하며 매출 기반을 유지했고, 지역별 업체 방문 및 컨설팅 전환 활동을 통해 관계 관리도 지속했습니다. 안티리플렉스 PO 일정 조정을 통해 3월 매출로 이월 관리한 부분은 일정 조율 측면에서 의미가 있습니다. 또한 프리미엄 제약 총판 확대 추진과 신규 수탁처 컨택을 통해 파이프라인을 넓히려는 시도도 있었습니다.\n신규 제품 런칭을 위한 외주 미팅 및 제작 방향 설정, 변화관리 과제 참여 및 리더 역할 수행 등 영업 외 영역에서도 기여가 있었습니다. SOP 정리와 R&R 재정립을 통해 조직 체계를 개선하려는 시도 역시 긍정적입니다."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 신규 수탁처 허가 변경 진행시 구비 문서에 대한 사전 지식이\n   부족하여 Full CDT 자료에 대하여 이슈 발견 시점이 늦어짐.\n   이에 따라 허가 변경 시점이 늦어지나, 계약 자체에 이슈가 발생\n   되어 업체/제품별 소통(재고 포함) 및 대응이 필요함.\n   이번 이슈를 계기로 영업 진행시 필요한 GMP 사전 지식을 습득하고\n   업무 Flow를 만들어 동일한 이슈가 발생하지 않도록 관리가 필요함\n2. 다기능화를 위한 구체적인 실행 전략이 필요하다.\n   현재 업무 변경 및 신입사원에 배치에 따라, 진행하고 있는 업무에\n   대한 전문성이 낮으며, 단순 업무 처리에 급급한 상황이다.\n   이에 다기능화를 위한 업무에 변경전에 현재 직무에 대한 전문성을\n   높이기 위한 전략이 필요함.", "mgr_grade": "B+", "mgr_text": "3월은 활동의 폭을 넓히는 것보다 실질적인 전환과 실행력 강화에 초점을 두어야 합니다. 신규 수탁사와의 계약을 가시적 성과로 연결하고, 기존 거래처에 대해서는 PO 확대를 위한 전략적 접근이 필요합니다. 미팅 건수보다는 계약 전환율과 매출 기여도를 기준으로 관리해야 합니다.\n또한 생산 및 납기 일정은 사후 대응이 아니라 사전 역산 관리로 운영하여 지연 리스크를 최소화해야 합니다. 허가 변경 및 GMP 관련 전문성은 반드시 보완하여 동일한 일정 지연이 재발하지 않도록 프로세스를 정리하고, 업무 Flow를 문서화해 체계화할 필요가 있습니다.\n조직 측면에서는 R&R을 명확히 하고, 신입 인력 배치와 역할 기준을 구체화하여 업무 효율을 높여야 합니다. 3월은 “계약 성과 창출, 일정 선관리, 전문성 확보”가 핵심입니다. 실행 결과로 보여주는 한 달이 되길 기대합니다."}]}, {"month": 3, "evaluator": "Yun Cheol Kim （김윤철）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 15.8억확보(3월내 추가 PO 확보 없음) \n    - 세피클캡슐(넥스팜코리아) 3월25일 출하완료(3월 매출 2.2억)\n    - 기존처 방문\n 2) 신규처 매출 확보\n   ①신규처 확보 생동허여 (시클러캡슐 및 시클러MR서방정) 적정성 확인\n      - 구주제약 소통(임상자료이슈) 완료 및 클리프캡슐 허가변경 접수 예정(4월내)\n      - 현황: 전자 결제 품의 및 계약 체결 완료, Full CDT 전달\n      - 시클러MR서방정 제조소 이전 허가 변경 완료 후 구주제약 허가 변경 접수 예정(5월내)\n   ②한국 프라임 제약 CTD완료 → 프라임제약 허가 변경 접수(4/1)\n      - 삼성세파클러캡슐(삼성제약) 병렬 허가 신청 소통 완료\n   ③신규 생동처 한미약품 → 제조설비상이하여 불가/  아주약품 세프디니르(베트남 수출용) 중단\n   ④분말충전주사제 신규매출 확보를 위한 삼진제약 소통\n     - 세프트리악손(2LOT/1억)과 세포티암염산염(6LOT/3.5억) \n2.미래성장동력\n 1) WMS 구축일정 변경(Go-Live 5월→11월)\n   -인성IDS 개발 일정에 따른 변경으로, 향후 변경되지 않도록 일정 수립\n   -MES와 순차적 Go-Live 시행으로 System 안정화\n 2) 변화혁신과제 과제 및 리더1건/ 멤버2건 참여\n    → 세파센터 홍보자료 과제(과제명세파센터 품질 경쟁력 통합 홍보 패키지 구축) 팀차터 완료\n3. 핵심인재 육성(3명)\n 1) SOP 영문화 (안병돈)\n    →SOP별 담당자 선정 및 주단위 일정 관리, 진행율 91% 완료(2월28일 완료 예정) \n 2) 거현량을 통한 업무 능력 강화(이재현,전현준)\n   완제품 입·출고(안성 송하준님)전문가 소통/방문을 통한 업무 능력 강화\n4. 핵심가치\n 1) 외부보관 물량을 100% 세파센터로 전환하여  보관 비용 \"Zero\"1건 칭찬 사례로 연걸", "mgr_grade": "A", "mgr_text": "수탁 매출 기반 확보와 신규 허가·거래처 파이프라인 구축을 동시에 추진한 기간이었습니다.\n기존 거래처와의 지속적인 방문 및 커뮤니케이션을 통해 PO 15.8억을 확보하였으며, 세피클캡슐 출하를 완료하여 실제 매출 2.2억으로 연결하였습니다. 단순 수주에 그치지 않고 출하 및 매출 실현까지 연계한 실행력을 확보하였습니다.\n신규 거래처 측면에서는 구주제약, 프라임제약, 삼성제약 등과의 협의를 통해 허가 변경 및 CTD 기반 매출 구조를 선제적으로 구축하였으며, 임상자료 이슈 등 리스크에 대해서도 사전 대응하여 일정 지연 없이 진행 기반을 확보하였습니다. 또한 삼진제약과의 협의를 통해 주사제 약 4.5억 규모 신규 매출 가능성을 확보하는 등 단기 매출과 중장기 허가 기반 매출을 균형 있게 추진하였습니다.\n이와 함께 WMS 구축 및 변화혁신 과제를 병행하여 중장기 운영 효율화 기반을 마련하였고, SOP 영문화 및 실무 교육을 통해 조직 역량 강화도 추진하였습니다. 특히 외부 보관 물량을 100% 내재화하여 보관 비용 Zero를 달성한 점은 운영 효율 측면에서 의미 있는 성과입니다."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "A", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. WMS 구축 일정 목표 Go-Live 5월로 설정하였으나, 인성 IDS\n   와의 소통 부족으로 인하여 정확한 일정을 수립하지 않아. 기\n   수립된 계획대비 5개월 지연됨. \n   향후 유관부서와의 협업시, 정확한 목적 및 일정 공유를 통해\n   공감하고, 변하지않는 일정 수립이 필요함\n2. 업무 전문성을 위해 명확한 업무 R&R 설정이 필요함\n   직원들의 현자 업무를 파악하고, 본인이 잘할 수 있는, 재밌어\n   하는 업무 배치를 통해 스스로 성장할 수 있는 환경 및 업무\n   부여가 필요함.", "mgr_grade": "A", "mgr_text": "허가 기반 매출 확보를 위해\n- 구주제약은 4월 2주차 내 허가 변경 접수 완료 여부 확인 및 후속 대응 체계 구축\n- 프라임제약은 4/1 접수 이후 4월 내 보완 대응 및 진행률 관리\n- 삼성제약은 4월 3주차까지 병렬 허가 접수 협의 완료를 목표로 추진바랍니다.\n기존 거래처는 주 2회 이상 방문 및 비대면 소통을 병행하여 4월 내 추가 PO 확보로 이어지도록\n주사제 관련하여\n-4월 2주차 내 원부자재 확보 완료\nWMS 구축은 재정비를 최우선으로 하여\n-4월 1주차 전체 일정 재수립\n-4월 2주차 유관부서 일정 확정(Fix)\n- 4월 내 MES 연계 실행 계획 수립을 통해 더 이상 지연되지 않는 실행 체계를 구축바랍니다,\n조직 운영 측면에서는\n-4월 2주차까지 전 직원 R&R 재정의 및 4월 3주차 개인 역량 기반 업무 재배치 완료하고\n또한 뉴디짐주 계약 취소 건은\n-4월 1주차 내 GP사와 협의 완료 될 수 있도록 해주세요!"}]}, {"month": 4, "evaluator": "Sang Min Lee （이상민）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 15.8억확보\n     - 신일제약(베아세프정) PO1Lot 확보함\n     - 메디카 코리아 (시클러서방정) PO 6Lot → 5Lot 변경됨.\n 2) 신규처 매출 6.3억 확보\n   ①신규처 확보 생동허여 (시클러캡슐 및 시클러MR서방정)  확인\n      - 구주제약/제뉴파마 소통(임상자료이슈) 완료 및 자사허여 허가변경 접수 완료 (4월)\n        - 제뉴파마(세크런캡슐)  9월 PO 2.5억 확보\n    ②한국 프라임 제약 CTD완료 → 프라임제약 허가 변경 접수 완료(4/1)\n      - 삼성제약(삼성세파클러캡슐) 접수 완료(4월) 8월 PO 3.8억 확보\n    ③분말충전주사제 신규매출 확보를 위한 PV 제품 추가\n     - 세프트리악손 2g →세프트리악손 1g&세프트리악손 2g 동시 진행\n2.미래성장동력\n 1) WMS 구축(Go-Live 5월→11월)\n   -개발 일정 단축을 위한 사내망 Open\n   -WMS Gap 분석을 통한 이슈사항 10건 도출 및 개선 방안 마련.\n   -WMS ↔ SAP 인터페이스 정의서 50% 완료\n 2) 변화혁신과제 과제 및 리더1건/ 멤버2건 참여\n   -세파센터 홍보자료 과제(과제명세파센터 품질 경쟁력 통합 홍보 패키지 구축) 발표완료\n   -5대 플랫폼 기반 목표 및 범위 설정 완료\n3. 핵심인재 육성(3명)\n 1) SOP 영문화 \n    →SOP별 담당자 선정 및 주단위 일정 관리, 진행율 98% 완료\n 2) 업무 재배치를 통한 전문성 강화 \n    -업무의 유사성과 성격을 기준으로 동일 업무를 통합하여 재분류\n4. 핵심가치\n 1) 본부내 우수직원사례 1건 칭찬 사례(전현준- 원가분석 Tool 개발)로 연걸\n 2) 센터내 칭찬사례 1건(안병돈 - 완제품 이동을 통한 보관료 절감) 발굴\n 2) 칭량 방법 개선 진행중 : 완통 전량 수동 칭량 → 완료 수동 칭량 X\n                                        (검증방법 설정 및 계획서 작성 완료)", "mgr_grade": "B+", "mgr_text": "· 기존처 PO 추가확보 소통 결과 소폭 증가하였고, 좀더 속도를 내서 20억 까지 달성해야 합니다. \n· 신규처 (삼성, 구주) 허가서류 제출 협상을 잘 진행했고, 생동허여 해결될때 까지 공략처 관계유지 필요합니다. \n· 매출, 인원관리 등 부족한 사안들을 단계별 정리해 나가고 있으며, 제대로 정상화 되기 까지 방향을 유지해야 합니다. \n· 직책자 발탁을 통해 이제 제대로 팀원육성의 자격을 갖추었으니, 조직문화 및 팀원의 역량강화를 깊이있게 진행할 것으로 기대합니다."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 수탁매출증대\n  - 현재 고형제에 대한 매출 확보에 급급함에 따라 미래성장동력\n     에 대한 고민을 하지 않았습니다. 5월부터 분말 충전 주사제 \n     매출 상위 업체 미팅을 통하여 잠재적인 매출 확보를 위한 소통이\n     필요합니다.\n2. 핵심인재육성\n  -부서내 교육 통한 업무 능력 향상 기회를 만들지못해 실제 행위와 \n    절차와의 GAP을 파악하지 못하는 상황이 발생하였습니다.\n    실제 교육의 횟수를 늘려 실무를 더 잘 할 수 있는 환경을 만들도록\n   하겠습니다.\n \n3.핵심가치\n - 핵심가치에 대한 이해도가 부족함을 느꼈습니다. 이에대하여 반복\n   적인 교육을 통하여 제대로 일 할수있는 문화를 만들고 센터내\n   칭찬사례를 만들 수 있도록 하겠습니다.", "mgr_grade": "B+", "mgr_text": "· 세파/안성 수탁매출 통합관리에 대해서는 좀더 적극개입이 필요해 보입니다. 공통된 사항이 많은 만큼 주도적으로 표준양식 및 정리방법을 전달해서 위수탁팀에 문서작성 및 수치화 등에 대한 학습 진행시켜 주세요. \n· 직무심의, 우수성과직원 등 다양한 발표기회를 팀내부적으로 시도하고 기회제공하는 문화를 만들어 가세요."}]}, {"month": 5, "evaluator": "Sang Min Lee （이상민）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 16.3억 확보\n     - 에이프로젠(세팍틸정) PO 1Lot 확보함(0.5억)\n 2) 신규처 매출 6.3억 확보(구주제약 9월 추가 예측)\n  ① 신규처 확보 생동허여 (시클러캡슐 및 시클러MR서방정)  확인\n      -  제뉴파마 소통(임상자료이슈) 완료 및 자사허여 허가변경 접수 완료 (5월)\n       - 구주제약 PO 27년 예측 → 26년9월 납기 기준 PO 소통중(+0.6억)\n  ②아주약품(생동처) 확보 → 최종 단가 제안 완료 및 내부 소통 후 협의 예정(6월)\n  ③분말충전주사제 신규매출 확보를 위한 오픈하우스 기획     \n   - 분말 충전 주사세 시장 조사 및 우선 협상 대상 선정 완료,참석 여부 확인중(세프트리악손 매출 순)\n  ④안성센터 제조원가 마스터 파일 구축 및 기획팀 검토 완료 후 안성배포 예정(6월)\n2.미래성장동력\n 1) WMS 구축(Go-Live 5월→11월)\n   -5월 4주차 이슈사항 : WMS → SAP I/F 관련 저장위치, 검체채취 프로세스 합의 완료\n 2) 변화혁신과제 과제 \n   -홍보자료 완료 일정 변경 :10월→7월(Open House 연계), 진행률: 70% \n   -분말주사제 구축을 위한 자재 및 원료 확보 완료\n 3) 원료~자재출고 플랫폼 개발(AI 활용)\n   - 원료 관리 체계 및 생산 계획 일정등 눈으로 보는 관리 플래폼 개발 진행중\n3. 핵심인재 육성(3명)\n 1) SOP 영문화 \n    →SOP별 담당자 선정 및 주단위 일정 관리, 진행율 98% 완료, 최종 3개 최종 검토 진행중\n 2) 업무 재배치를 통한 전문성 강화 \n    -위탁업무(전현준) : 재고 및 현황 관리 파일 재 구성 완료, 메뉴얼 70% 작성완료\n    -오더발행(함가은) : PV생산 오더 발행 독자 수행 가능.\n4. 핵심가치\n 1) 칭량 방법 개선 진행:칭량 Loss 개선을 위한 Data 확보 진행중(~6월말)\n 2) 거현량 2건 진행 완료- WMS 자재 운영 방안, scrubber 정기 운영 방안.", "mgr_grade": "B", "mgr_text": "1. 수탁매출\n· 아주약품 방문을 통해 위탁생동처 확보를 협상진행하고 있습니다. 과도한 수탁가 인하는 기존처 계약에 영향을 주기 때문에 신중하게 잘 협상해서 세파센터에 유리한 결과로 도출되기를 기대합니다. \n· 수탁가 산정을 위한 제조원가 마스터 파일을 안성센터까지 연계하는 성과가 있었습니다. 추후 우수성과직원추천에서 효과를 확인한 우호세력으로 만들기 위해서는 제출 전에 충분한 소통이 되는 것이 필요합니다.\n2. 핵심역량\n· RWS는 구축완료되었으나 WMS 진행시 PM 변경이 예정되어 있으니, 일정지연 없이 팀원들과 적극적으로 참여하여 연내 완료되도록 진행되어야 합니다.\n· 신규품목(자비세프타주 및 메이액트정)의 제조원가 및 생산성등을 고려하여 QA팀과 협업하여 사업전략으로 구축될 수 있도록 협업 진행해 주세요."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 수탁매출증대\n  - 분말 충전 주사제 오픈하우스에 대한 기획은 하였으나, 구체적인 \n     업체 선정 및 세부 사항에 대한 보완이 필요합니다.\n  -  신규처 8~9월 PO는 확보하였으나, 4분기에 대한 PO는 확인되지\n      않았습니다. 지속 소통하여 세파센터 매출에 대하여 확정 하도록\n      하겠습니다.\n2. 핵심인재육성\n  -부서내 교육 통한 업무 능력 향상 기회를 만들지못해 실제 행위와 \n    절차와의 GAP을 파악하지 못하는 상황이 발생하였습니다.\n    실제 교육의 횟수를 늘려 실무를 더 잘 할 수 있는 환경을 만들도록\n    하겠습니다.\n4.핵심가치\n - 거현량을 통하여 타 센터에 운영 방안에 대하여 학습하여,단순한 업무\n    접목으로 성과로 연결하기는 어렵습니다.\n    지속적으로 업무에 확대 적용함으로써, 성과로 연결할 수 있도록 하겠\n    습니다.", "mgr_grade": "B", "mgr_text": "1. 수탁매출\n· 안성/세파 목표/실적 등에 대해서 실측매출과 예측매출이 구분되어 관리되도록 실무선에서 연계해서 취합되도록 해야 합니다. 전현준님/이원진님이 통합 작성하고, 직책자들이 이중검토 되도록 개선되어야 합니다. \n· 기존처는 추가 PO에 대해서 지속적으로 모니터링하고, 신규처 허가변경으로 지연되고 있지만 대상처가 재이탈되지 않도록 지속적인 관계유지하고 진행단계를 궁금하지 않도록 소통 유지해 주실 것을 당부드립니다. \n· 분말주사제는 오픈하우스 일정을 계획하고 있는 만큼 시장분석 및 대상처에 대한 사전분석을 진행하고 6월 중순까지 보고되도록 진행해 주세요. \n2. 주요인사제도\n· 제도별 간사가 별도로 있지만, 전체현황 및 진행은 생산관리에서 모니터링 할 수 있도록 담당자 배정하고, 월례조회를 통해 Best vs Worst 사례를 공개하여 개선될 수 있도록 챙겨주세요."}]}, {"month": 6, "evaluator": "Sang Min Lee （이상민）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 16.3억확보\n     - 방문 및 유선 소통 진행을 통한 추가 PO확보, 이탈방지\n 2) 신규처 매출 7.6억 확보(구주제약 추가)\n  ① 신규처 확보 생동허여 (시클러캡슐 및 시클러MR서방정)  확인\n     -구주제약 PO 1.3억(2LOT) 확보\n     -시클러MR서방정(구주.제뉴) 수익성 분석 및 결제 품의 완료, 실 계약 체결중(7월)   \n     -삼성제약(프라임허여) 허가 이슈사전 확인 및 보완 예상 항목 선 조치 완료(프라임제약 CTD 보완) \n  ②아주약품(생동처) 확보 → 최종 단가 제안 완료 및 내부 소통 후 협의 예정(6월)\n     -허여업체(대화제약) 및 네트워크를 통해  지속적으로 협의 및 압박 진행중\n  ③베아세프정 신규처 (한국프라임제약) 단가 제안 완료\n2.미래성장동력\n 1) WMS 구축(Go-Live 5월→11월)\n   -WMS-SAP 인터페이스 진행률 : 44%\n 2) 업무 자동화(AI)\n   - 바이브코팅 활용한 업무 자동화 4건 진행중(인사정보, 예산, 생산계획, 일련번호 변환)\n 3) 원료~자재출고 플랫폼 개발(AI 활용)\n   - 원료 관리 체계 및 생산 계획 일정등 눈으로 보는 관리 플래폼 개발 진행중\n3. 핵심인재 육성(3명)\n 1) SOP 영문화 \n    →SOP별 담당자 선정 및 주단위 일정 관리, 진행율 100% 완료\n 2) 업무 재배치를 통한 전문성 강화 \n    -칭량공정 + 생산 공정 통합 →공정간 유연한 인력 운영 및 다기능화(안병돈,장재연)\n    -완제품 및 물류(이재현,전현준) :직무 범위 확대를 통한 인력 육성\n4. 핵심가치\n 1) 칭량 방법 개선 진행:칭량 Loss 개선을 위한 Data 확보 완료(~6월말)\n 2) 거현량 2건 진행 완료- 경동제약, 프라임제약", "mgr_grade": "B+", "mgr_text": "1. 수탁매출\n· 수탁매출 23.9억 PO를 확정하였습니다. 특히 세파클러캡슐 신규처 구주제약의 허가승인(6/30)을 위해 지속적인 소통을 통해 병렬 허가진행 및 이탈을 예방하는 것에 각고의 노력이 숨어 있음을 인정합니다. 또한 ·안성 위수탁팀과의 협업을 통해 신규처(셀트리온)을 확보하였습니다. \n· 한국프라임제약 소통을 통해 베아세프정 추가 신규수탁을 이끌어 냈습니다. 계약기간으로 27년으로 이월되는 것은 아쉽지만, 지속적인 소통력으로 원만한 합의를 잘 리딩하였습니다. \n2. 핵심역량\n· 바이브코딩을 활용한 다양한 업무개선은 시도만으로도 칭찬 받아야 합니다. 클로드, 제미나이 등 다양한 AI 도구를 활용한 업무개선 사례 도출을 지속 유지해야 합니다. \n· 인사정보, 예산, 생산계획 사례는 연속적으로 개선되도록 리딩하시기 바랍니다. \n3. 인재육성\n· 업무역량 확대 및 업무부하 해결을 위해 FTE 2명을 생산팀과 공유되도록 조치하여, 다소 생산팀의 업무부담이 해소될 것으로 기대됩니다."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 수탁매출증대\n  - 기존처 PO 추가확보를 위하여 법적 규제 변화에 따른 재고 확보 \n     필요성을 강조하는 영업전략 수립이 필요 합니다.\n  - 의약품 동등성 개정에 따라, 프라임제약(생동처) 및 허여 받은 업체\n     이탈을 방지하기 위한 전략 수립이 필요합니다.\n2. 핵심인재육성\n  -칭량 공정이 생산 공정과 통합됨에 따라 현재 차석 업무를 수행 중인 \n   1명(안병돈)이 생산 공정으로 전환 배치될 예정입니다. 이에 따라 차석 \n   업무의 공백을 방지하고 업무 연속성을 확보하기 위해 추가 인력 육성이 \n   필요합니다", "mgr_grade": "B+", "mgr_text": "1. 수탁매출\n· 구주제약 승인 이후 제뉴, 삼성 등 신규처 허가승인이 가능해 졌으므로, 신규처 PO 확정을 위해 지속적인 모니터링과 협상을 진행해서 실시간 보고체계를 유지하고, 26년 수탁매출에 대해서 7월 기한으로 다시 시뮬레이션에 따른 보고 진행해주세요. \n· 안티러캡슐(한국프라임제약)에 대한 장기 위수탁계약은 좋은 아이디어이며 필요한 조치로 판단됩니다. 원만한 합의를 위해 우호관계를 유지하고 독소조항에 대한 면밀한 검토를 통해 매출에 기여할 수 있도록 7월 기한으로 정리해 주세요. \n2. 인재육성\n· 8월 부터 업무 및 작업인원 겸직을 통해 차석에 대해서 고민입니다. 육성후에 지정 하는 것보다는 우선 지정하고, 단계별로 육성하는 것이 좋은 방법으로 판단됩니다. 후보군에 대해서는 숙의하고 8월 전에는 지정 하도록 해야 합니다. \n· 김미영님은 12월 정년퇴직인데, 업무 실수가 반복되고 있으니 주의과 관심이 집중되어야 합니다. 인계자는 지정되었으나 충원에 대한 어려움이 있으니 질책보다는 포용과 관심으로 실수를 예방할 수 있도록 지속적인 조치를 진행해야 합니다."}]}, {"month": 7, "evaluator": "Sang Min Lee （이상민）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n 1) 기존처 PO 18.9억확보(+2.6억)\n    ① 킵스바이오파마 신규 PO 확보 (+2.6억)\n    ② 휴온스 단가 인상(표시자재 연계) 협의 완료 및 27년1월매출 → 26년 12월 협의중\n    ③ 방문 및 유선 소통 진행을 통한 추가 PO확보, 이탈방지\n 2) 신규처 매출 7.6억 확보(구주제약 추가)\n  ① 신규 3처 허가 변경 완료\n     -안티러허여(삼성제약), 시클러허여(제뉴파마 ,구주제약)\n     -8월 Commercial 생산 진행 및 매출 발생 예정\n  ②셀트리온(시클러) 안성품목과 위수탁 계약 진행 확정(8월내),    \n     -영업/마케팅과 소통완료로 최종 안성 품목 위탁 변경 승인\n  ③대한뉴팜, 둥국제약 시클러캡슐 수탁 제안 완료 및 협의 진행중\n  ④이든파마 시클러허여 방향으로 계약 진행중 \n3) 신규 해외 CMO 사업\n  Basilea(스위스) CDA 문서 검토 완료 및 법무팀 검토 요청 \n2.미래성장동력\n 1) WMS 구축(Go-Live 5월→11월)\n   - WMS 구축 진행률 65% 달성\n   -  IQ 수행완료(7/30) 및  CSV 일정 확정(7/27)\n 2) 업무 자동화(AI)\n   - 바이브코팅 활용한 업무 자동화 5건 임시 OPEN 운영중\n     (인사정보, 예산, 생산계획, 근태관리, 회의록)\n 3) 변화혁신과제\n   - 신입사원 교육자료, 브로셔·리플렛 기획안 작성중(70%)\n3. 핵심인재 육성(2명)\n 1) 수탁자재 운영에 따른 SOP 및 절차 마련\n    →표시자재 수탁처 제공 → 위탁처(대웅바이오) 공급(신규처 및 기존처)\n 2) 업무 재배치를 통한 전문성 강화 \n    -원료 인수인계 절차 확정, 물류 담당자(전현준) 육성 진행 완료\n    -자체 재고 실사 및 보관소 Mapping을 통한 업무 역량 강화(이재현,전현준)\n4. 핵심가치\n 1) 세파센터 생산 계획 프로그램 구축 완료 및 시험 OPEN(공급·생산·구매·QC 연계, 맞춤 UI)\n 2) 거현량\n  -  세파항생제 경쟁사 동향 파악 1건 진행 완료- 대한뉴팜\n  -  세스코와의 협업을 통한 세파센터 방서방충 전략 수립", "mgr_grade": "B+", "mgr_text": "1. 수탁매출 \n기존처 PO 소폭증가 되었고, 일정조정을 통해 7월 수탁매출은 목표달성이 가능했습니다. \n2. 신규처 발굴\n6월 구주제약에 이어 7월 제뉴파마도 생동허여로 허가 받으면서 시클러캡슐 및 MR서방정의 생동허여로 인한 이슈는 해소되었다고 예측되고, 셀트리온을 추가확보하였습니다. \n3. 클로드 활용\n생산계획, 근태 등 다양한 사례발굴을 통해 시각화 및 업무자동화를 진행하였습니다. \n지속적인 개선사례 발굴 및 진행이 진행되어야 함을 부탁드립니다. \n4. 생산팀 인원지원 \n칭량(안병돈, 장재연님)에 대해서 생산팀 지원을 통해 업무공백 해소를 지원하였습니다. 적인인원임에서 센터 전체를 바라보는 점에 대해서 고무적으로 평가합니다."}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 수탁매출증대\n  - 신규처(셀트리온&이든파마) 26년 PO 확보를 위해 계약서 체결과 허가변경을 병렬 진행 및 각 업체별 안전 \n    재고 최소화 운영을 협의     하여 세파센터 매출 증대를 위한 전략 수립이 필요 합니다.\n  - 프라임제약(생동처) 이탈을 방지하기 위한 계약기간 변경은 중단되었지만 지속적으로 소통 관리하여 \n    이탈을 방지하는 전략 수립이 필요합니다.\n2. 핵심인재육성\n  -칭량 인력 공백으로 인해 물류 업무의 부담이 증가하고 있습니다. \n    이에 반복적인 단순 업무는 자동화를 통해 업무 효율을 향상시키고, 확보된 시간을 핵심 업무와 인력 육성에 \n   집중하여 조직의 운영 역량을 강화하겠습니다.", "mgr_grade": "B+", "mgr_text": "1. 수탁매출 \n진행중인 계약(셀트리온)은 서둘러서 완결지어야 하고, 마더스제약도 QA팀 박정진님과 소통해서 미팅일정 확보하고 진행해 주실 것을 당부드립니다. \n2. 해외수출\n바실리아사 CDA 계약 체결은 서둘러서 미팅하고 방향 잡을 수 있도록 진행해 주세요. 법무자문에 시간을 소요해서는 안되고, 미팅이라고 해보고 진행여부가 결정되도록 신속하게 진행해 주세요. \n3. 인원관리 \nQA팀 김문희님 이동과 함가은님(질병) 및 칭량인원 이동 등 생산관리팀 인원의 누수가 눈에 보입니다. 팀원 독려 및 효율화 진행해 주시고, 필요한 부분은 상시로 논의해서 퇴사발생 없도록 잘 방어해 보십시다."}]}, {"month": 8, "evaluator": "Sang Min Lee （이상민）", "status": "완료", "blocks": [{"type": "잘한점", "self_grade": "B", "self_text": "1.  수탁 매출 증대(목표80억 달성)\n1) 8월 수탁 매출 : 7.2억\n    매출 현황 : 메디카(MR) 1.2억, 삼성제약(시클러) 3.6억, 프라임(안티러)2억, 세팍틸(에이프로젠) 0.5억\n2) 26년 PO 확보 (현 26.5억 → 8월 추가 PO없음)\n  ① 기존처 방문 및 유선 소통 진행을 통한 추가 PO확보, 이탈방지\n  ② 신규 매출처 확보(시클러캡슐 신규 수탁사)\n     - 셀트리온(안티러허여) 위수탁 계약 확정 및 손익검토 완료(w 기획)\n     - 이든파마(시클러허여) 계약 확정 및 허가 변경 접수 예정. 26년 PO협의 진행중\n     - 마더스 제약(안티러허여) 수탁 제안을 위한 미팅 실시\n     - 대한뉴팜, 둥국제약 시클러캡슐 수탁 제안 완료 및 협의 진행중\n3) 신규 해외 CMO 사업\n  Basilea(스위스) CDA 체결 완료\n  Cue supple(Ceftriaxone+ Diluent): 필리핀 수출 공급 계약 협의(w 바이오센터)\n2.미래성장동력\n 1) WMS 구축(Go-Live 5월→11월)\n   - IQ 완료 및  CSV 일정 확정\n   - SAP Version upgrade에 다른 일정 변경(10월 → 11월)\n 2) 변화혁신과제\n    신입사원 교육자료, 브로셔·리플렛 작성 완료(80%) + 영문화 동시 진행\n3. 핵심인재 육성(2명)\n 1) 업무 고도화(현장 GMP Upgeade)\n     수탁 소포장(30C) 오더 수량과 생산수량 일치를 위한 절차를 마련(생산관리&생산)\n 2) 업무 재배치를 통한 전문성 강화 \n   - 물류 출하 및 입고 등 물류 업무 독자 수행 가능(전현준)\n   - 보관소 Mapping을 통한 업무 역량 강화(이재현,전현준)\n4. 핵심가치(거현량 1건 완료)\n  · 타회사(환인·경보) 소포장(수탁) 운영 및 절차 확인 → 업무 접목 완료", "mgr_grade": "B+", "mgr_text": "1. KPI\n· 수탁매출 7.4억 달성 완료\n· 이든, 마더스, 셀트리온, 대한뉴팜, 동구 등 신규처 확보 총력 진행\n2. 핵심역량\n· 바실리아(스위스)사 CDA 계약체결\n· GP사 중국법무자문(중륜) 확보 및 레터발송 준비\n3. 역량강화\n· 수탁처 확보 및 업무파악을 위한 티어미팅 참여\n· 팀내 업무재배치 및 역량강화 진행"}, {"type": "개선점", "self_grade": "B", "self_text": null, "mgr_grade": "B+", "mgr_text": null}, {"type": "개선점", "self_grade": "B", "self_text": "1. 26년 매출 목표 달성을 위한 추가 PO 확보가 필요합니다, 신규처(셀트리온, 이든 및 추가 1처)와 지속적인 소통을 통해 재고를 최소화하고 계약 및 허가 변경 접수를 병렬로 추진하여 허가 변경 일정을 단축하여, 26년 추가 PO 확보를 위한 전략 및 할일을 수립하겠습니다\n2. 최초 WMS Go-Live 일정은 5월에서 10월로 변경되었으며, 추가로 1개월 지연되어 최종 6개월 지연되었습니다. 지연된 기간만큼 철저히 사전 준비하여 Go-Live 시 이슈가 발생하지 않도록 하겠습니다.\n3.현재 위수탁 담당자였던 전현준님의 물류 업무 배치로 위수탁 영업에 업무 공백이 발생하고 있습니다. 이를 극복하기 위해 생산관리팀 업무를 효율적으로 운영할 수 있는 방안을 고민하고 공백이 없도록 하겠습니다.", "mgr_grade": "B+", "mgr_text": "1. 수탁매출 확보\n· 신규처는 진행상황에 따라 이든, 셀트리온은 확보 완료되었기 때문에 계약 신속 완료 진행(9월)\n· 마더스&동구&대한뉴팜 중 1처 확보 신속 완료진행 (9월)\n· 바실리아, Cue Supple 모두 CDA 등 필요한 조치 진행하여 수출 물량 예측진행 (9월)\n2. 인원관리\n· 물류인원 확보에 대한 결정 (채용 vs CDP) 진행해야 합니다. \n· 생산관리 업무효율화를 통해 업무부담을 경감하고, 질환자(함가은님)에 대한 배려는 지속해야 합니다. \n· 다만, 이전에 발생한 실수들(OT수당, BOM발생)에 대해서는 어떻게 유관부서와 원활하게 소통해서 감정적 낭비를 줄일 수 있을지에 대해서는 방안을 수립해야 합니다."}]}]};
+
+let currentUser = null;
+let currentGroupFilter = null;
+let currentCandidate = null;
+const savedResults = {}; // 사번 -> {deep, rel, final, note}  (1차 데모용, 새로고침시 초기화)
+
+function tryLogin(){
+  const name = document.getElementById('in-name').value.trim();
+  const sabun = document.getElementById('in-sabun').value.trim();
+  const match = ROSTER.find(r => r.name === name && r.sabun === sabun);
+  const err = document.getElementById('login-error');
+  if(!match){
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+  currentUser = match;
+  currentGroupFilter = match.groups[0];
+  document.getElementById('who-name').textContent = match.name;
+  document.getElementById('nav-user').style.display = 'flex';
+  renderGroupTabs();
+  renderList();
+  switchScreen('screen-list');
+}
+
+function logout(){
+  currentUser = null;
+  document.getElementById('in-name').value = '';
+  document.getElementById('in-sabun').value = '';
+  document.getElementById('nav-user').style.display = 'none';
+  switchScreen('screen-login');
+}
+
+function switchScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function renderGroupTabs(){
+  const wrap = document.getElementById('group-tabs');
+  wrap.innerHTML = '';
+  if(currentUser.groups.length <= 1){ wrap.style.display = 'none'; return; }
+  wrap.style.display = 'flex';
+  currentUser.groups.forEach(g => {
+    const btn = document.createElement('div');
+    btn.className = 'group-tab' + (g === currentGroupFilter ? ' active' : '');
+    btn.textContent = GROUP_NAMES[g];
+    btn.onclick = () => { currentGroupFilter = g; renderGroupTabs(); renderList(); };
+    wrap.appendChild(btn);
+  });
+}
+
+function renderList(){
+  const list = CANDIDATES.filter(c => currentUser.groups.includes(c.group) && c.group === currentGroupFilter);
+  document.getElementById('list-meta').textContent =
+    GROUP_NAMES[currentGroupFilter] + ' · 대상자 ' + list.length + '명';
+  const grid = document.getElementById('cand-grid');
+  grid.innerHTML = '';
+  if(list.length === 0){
+    grid.innerHTML = '<div class="empty-hint">해당 그룹에 대상자가 없습니다.</div>';
+    return;
+  }
+  list.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'cand-card';
+    card.onclick = () => openDetail(c);
+    const r = savedResults[c.사번] || {};
+    card.innerHTML = `
+      <div class="cc-head">
+        <div class="avatar">${c.성명.slice(-2)}</div>
+        <div class="name">${c.성명}</div>
+      </div>
+      <div class="meta">${c.센터사업부 || c.본부실}${c.팀 ? ' · ' + c.팀 : ''}</div>
+      <div class="meta" style="margin-top:2px;">${c.현직무 || '-'}</div>
+      <div class="status-row">
+        <span class="pill ${r.submitted ? 'done':''}">${c.면접유형}${r.result ? ' · ' + r.result : ''}${r.submitted ? ' ✓제출완료' : (r.result ? ' (임시저장)' : '')}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function showList(){
+  renderList();
+  switchScreen('screen-list');
+}
+
+function openDetail(c){
+  currentCandidate = c;
+  document.getElementById('d-name').textContent = c.성명;
+  document.getElementById('d-sub').textContent =
+    `${c.본부실}${c.센터사업부 ? ' · ' + c.센터사업부 : ''}${c.팀 ? ' · ' + c.팀 : ''} · ${c.직책 || ''}`;
+  document.getElementById('d-tag').textContent = c.심의유형 || c.심의기준;
+
+  const card = PERSONNEL_CARDS[c.사번];
+
+  const infoFields = card ? [
+    ['현직무', c.현직무], ['생년월일', card.생년월일], ['학력', card.학력사항?.[0] ? card.학력사항[0].학교 + ' · ' + card.학력사항[0].학위 : c.학력],
+    ['총경력', c.경력], ['당사입사일', card.당사입사일], ['근속(그룹)', card.근속기간_그룹],
+  ] : [
+    ['현직무', c.현직무], ['현직무발령일', fmtDate(c.현직무발령일)], ['학력', c.학력],
+    ['총경력', c.경력], ['입사일(그룹)', fmtDate(c.입사일_그룹)], ['근속(그룹)', c.근속_그룹],
+  ];
+  document.getElementById('d-info').innerHTML = infoFields.map(([k,v]) => `
+    <div class="info-cell"><div class="k">${k}</div><div class="v">${v || '-'}</div></div>
+  `).join('');
+
+  renderGrades(c, card);
+
+  const applyFields = [
+    ['지원직무(인사1차)', c.지원직무_인사1차], ['지원직무(본부장)', c.지원직무_본부장],
+  ];
+  document.getElementById('d-apply').innerHTML = applyFields.map(([k,v]) => `
+    <div class="info-cell"><div class="k">${k}</div><div class="v">${v || '-'}</div></div>
+  `).join('');
+
+  renderMonthlyFeedback(c);
+  renderAwards(card);
+
+  const r = savedResults[c.사번] || {};
+  document.getElementById('d-interview-title').textContent = c.면접유형 + ' 결과 입력';
+  document.getElementById('f-label').textContent = c.면접유형;
+  document.getElementById('f-result').value = r.result || '';
+  document.getElementById('f-note').value = r.note || '';
+  const noteEl = document.getElementById('save-note');
+  if(r.submitted){
+    noteEl.textContent = '이미 제출된 결과입니다. 다시 제출하면 내용이 갱신됩니다.';
+    noteEl.className = 'save-note ok';
+  } else {
+    noteEl.textContent = '';
+    noteEl.className = 'save-note';
+  }
+
+  switchScreen('screen-detail');
+}
+
+function gradeClass(v){
+  if(!v) return '';
+  if(v === 'A' || v === 'S') return 'g-a';
+  if(v === 'B+') return 'g-bp';
+  if(v === 'C' || v === 'C+' || v === 'D' || v === 'F') return 'g-low';
+  return '';
+}
+
+function renderGrades(c, card){
+  const wrap = document.getElementById('d-grades');
+  let chips = [];
+  if(card && card.평가결과 && card.평가결과.length){
+    card.평가결과.slice().reverse().forEach(e => {
+      chips.push(`<div class="grade-chip ${gradeClass(e.등급)}"><div class="yr">${e.연도} · ${e.평가유형}</div><div class="val">${e.등급}</div></div>`);
+    });
+  } else {
+    [['2024', c['2024종합']], ['2025', c['2025종합']], ['2026', c['2026종합']]].forEach(([yr, v]) => {
+      const na = !v || v === '비대상' || v === '요청';
+      chips.push(`<div class="grade-chip ${na?'':gradeClass(v)}"><div class="yr">${yr} 종합</div><div class="val ${na?'na':''}">${v || '-'}</div></div>`);
+    });
+  }
+  if(c.다면26상){
+    chips.push(`<div class="grade-chip multi"><div class="yr">'26상 다면 (긍정/부정)</div><div class="val">${c.다면26상}</div></div>`);
+  }
+  wrap.innerHTML = chips.join('');
+}
+
+function renderMonthlyFeedback(c){
+  const section = document.getElementById('section-monthly');
+  const data = MONTHLY_FEEDBACK[c.사번];
+  if(!data || !data.length){ section.style.display = 'none'; return; }
+  section.style.display = 'block';
+
+  const strip = document.getElementById('d-month-strip');
+  const acc = document.getElementById('d-month-accordion');
+  const latest = data[data.length - 1].month;
+
+  function grades(m){
+    const good = m.blocks.find(b => b.type === '잘한점');
+    return good ? `${good.self_grade || '-'}/${good.mgr_grade || '-'}` : '-';
+  }
+
+  strip.innerHTML = data.map(m => `
+    <div class="month-pill" id="mp-${m.month}" onclick="toggleMonth(${m.month})">
+      <b>${m.month}월</b>${grades(m)}
+    </div>
+  `).join('');
+
+  function blockHtml(m){
+    const typeLabel = { '잘한점':'잘한 점(한일)', '개선점':'개선/보완할 점(할일)', 'fup':'전월 피드백 반영(F/UP)' };
+    const order = ['잘한점','fup','개선점'];
+    const blocks = order.map(t => m.blocks.find(b => b.type === t)).filter(Boolean);
+    return `
+      <div class="month-block" id="mb-${m.month}" style="display:none;">
+        <div class="mb-head">${m.month}월 월별피드백 <span>평가자: ${m.evaluator || '-'}</span></div>
+        ${blocks.map(b => `
+          <div class="fb-sub">
+            <div class="fb-title">${typeLabel[b.type]}</div>
+            <div class="fb-pair">
+              <div class="fb-col"><div class="fb-who">본인<span class="fb-grade">${b.self_grade||'-'}</span></div>
+                ${b.self_text ? `<div class="fb-text">${escapeHtml(b.self_text)}</div>` : ''}</div>
+              <div class="fb-col"><div class="fb-who">상사<span class="fb-grade">${b.mgr_grade||'-'}</span></div>
+                ${b.mgr_text ? `<div class="fb-text">${escapeHtml(b.mgr_text)}</div>` : ''}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+  acc.innerHTML = data.map(blockHtml).join('');
+}
+
+function toggleMonth(month){
+  const pill = document.getElementById('mp-' + month);
+  const block = document.getElementById('mb-' + month);
+  const isOpen = pill.classList.contains('open');
+  document.querySelectorAll('.month-pill').forEach(p => p.classList.remove('open'));
+  document.querySelectorAll('.month-block').forEach(b => b.style.display = 'none');
+  if(!isOpen){
+    pill.classList.add('open');
+    block.style.display = 'block';
+  }
+}
+
+function renderAwards(card){
+  const section = document.getElementById('section-awards');
+  if(!card || (!card.포상이력?.length && !card.징계이력?.length)){ section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  let chips = [];
+  (card.포상이력||[]).forEach(a => {
+    chips.push(`<div class="award-chip">🏆 <span class="aw-name">${a.포상명}</span><span class="aw-date">${a.포상일자}</span></div>`);
+  });
+  (card.징계이력||[]).forEach(a => {
+    chips.push(`<div class="award-chip disc">⚠️ <span class="aw-name">${a.징계구분}</span><span class="aw-date">${a.징계일자||''}</span></div>`);
+  });
+  document.getElementById('d-awards').innerHTML = chips.join('');
+}
+
+function escapeHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+function fmtDate(s){
+  if(!s) return '';
+  const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${m[1]}.${m[2]}.${m[3]}` : s;
+}
+
+// ▼ 배포한 Google Apps Script 웹앱 URL을 여기에 붙여넣으세요
+const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwq6xv7WnNw5joZxZk0yyEU95nxB4A3DDv_y6y5-XpBc8FWGaIwLNeIwSJISRfMXTtunQ/exec';
+
+function saveInterview(){
+  const c = currentCandidate;
+  savedResults[c.사번] = {
+    type: c.면접유형,
+    result: document.getElementById('f-result').value,
+    note: document.getElementById('f-note').value,
+    submitted: (savedResults[c.사번] || {}).submitted || false,
+  };
+  const note = document.getElementById('save-note');
+  note.textContent = '임시 저장되었습니다 (이 화면에서만 유지 · 아직 시트에 전송되지 않음)';
+  note.className = 'save-note';
+}
+
+function submitInterview(){
+  const c = currentCandidate;
+  const result = document.getElementById('f-result').value;
+  const noteText = document.getElementById('f-note').value;
+  const note = document.getElementById('save-note');
+
+  if(!result){
+    note.textContent = '결과(합격/불합격)를 선택한 후 제출해주세요.';
+    note.className = 'save-note err';
+    return;
+  }
+
+  if(!SHEET_WEBAPP_URL || SHEET_WEBAPP_URL.indexOf('PASTE_YOUR') === 0){
+    note.textContent = '아직 시트 연동 전입니다 (관리자에게 문의해주세요).';
+    note.className = 'save-note err';
+    return;
+  }
+
+  const payload = {
+    사번: c.사번, 이름: c.성명, 그룹: GROUP_NAMES[c.group],
+    면접유형: c.면접유형, 결과: result, 코멘트: noteText,
+    제출자: currentUser ? currentUser.name : '',
+  };
+
+  note.textContent = '제출 중...';
+  note.className = 'save-note';
+
+  fetch(SHEET_WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload),
+  }).then(() => {
+    savedResults[c.사번] = { type: c.면접유형, result, note: noteText, submitted: true };
+    note.textContent = '제출 완료되었습니다. (' + new Date().toLocaleString('ko-KR') + ')';
+    note.className = 'save-note ok';
+  }).catch(() => {
+    note.textContent = '전송에 실패했습니다. 네트워크 확인 후 다시 시도해주세요.';
+    note.className = 'save-note err';
+  });
+}
+
+document.getElementById('in-sabun').addEventListener('keydown', e => {
+  if(e.key === 'Enter') tryLogin();
+});
+</script>
+</body>
+</html>
