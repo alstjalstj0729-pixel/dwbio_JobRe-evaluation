@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 10월 직무재평가 면접자료</title>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  @font-face {
+    font-family: 'DWImpactamin';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  :root{
+    --paper:#FFFDF9;
+    --ink:#2B2622;
+    --ink-soft:#6B6259;
+    --line:#E7DFD3;
+    --accent:#E8935B;
+    --accent-soft:#FCE6D4;
+    --accent-deep:#B96A38;
+    --tag-jobre:#C98A4B;
+    --card:#FFFFFF;
+    --radius:14px;
+    --font-brand:'DWImpactamin','Pretendard',-apple-system,sans-serif;
+    --font-body:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    --shadow-sm:0 1px 2px rgba(43,38,34,0.05), 0 1px 1px rgba(43,38,34,0.04);
+    --shadow-md:0 4px 10px -4px rgba(43,38,34,0.10), 0 12px 28px -14px rgba(43,38,34,0.14);
+    --shadow-lift:0 8px 20px -6px rgba(233,147,91,0.28), 0 2px 6px rgba(43,38,34,0.08);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    min-height:100vh;
+    line-height:1.5;
+  }
+  .stage{
+    max-width:960px;
+    margin:0 auto;
+    padding:28px 20px 80px;
+  }
+  header.top{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px;
+    margin-bottom:32px;
+    position:relative;
+  }
+  header.top::before{
+    content:"";
+    position:absolute;
+    left:0; bottom:-1px;
+    width:64px; height:2px;
+    background:var(--accent);
+  }
+  header.top .title{
+    font-family:var(--font-brand);
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:0;
+  }
+  header.top .title small{
+    display:block;
+    font-family:var(--font-body);
+    font-size:12px;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-top:6px;
+    letter-spacing:0.01em;
+  }
+  header.top .who{
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+  header.top .who b{ color:var(--ink); font-weight:700; }
+  header.top button.logout{
+    margin-left:12px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-soft);
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:6px;
+    cursor:pointer;
+  }
+  header.top button.logout:hover{ border-color:var(--accent-deep); color:var(--accent-deep); }
+
+  .screen{ display:none; }
+  .screen.active{ display:block; }
+
+  /* ---------- 로그인 ---------- */
+  #screen-login.active{
+    min-height:84vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:radial-gradient(ellipse 640px 420px at 50% 38%, var(--accent-soft) 0%, rgba(252,230,212,0) 72%);
+    margin:-28px -20px 0;
+    padding:28px 20px 0;
+  }
+  .login-box{
+    width:100%;
+    max-width:380px;
+    padding:44px 38px 38px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow-md);
+    position:relative;
+    overflow:hidden;
+  }
+  .login-box::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:4px;
+    background:linear-gradient(90deg, var(--accent) 0%, var(--accent-deep) 100%);
+  }
+  .login-box .eyebrow{
+    font-size:12px;
+    color:var(--accent-deep);
+    font-weight:600;
+    margin-bottom:10px;
+    letter-spacing:0.02em;
+  }
+  .login-box h1{
+    font-family:var(--font-brand);
+    font-weight:400;
+    font-size:26px;
+    margin:0 0 8px;
+    letter-spacing:0;
+  }
+  .login-box p.desc{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+    line-height:1.6;
+  }
+  .field{ margin-bottom:16px; }
+  .field label{
+    display:block;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .field input{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:14.5px;
+    font-family:inherit;
+    background:#FFFEFC;
+  }
+  .field input:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .login-box button.submit{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border:none;
+    border-radius:9px;
+    background:var(--ink);
+    color:#fff;
+    font-size:14.5px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(43,38,34,0.18);
+    transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+  }
+  .login-box button.submit:hover{
+    background:var(--accent-deep);
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-1px);
+  }
+  .login-box button.submit:active{ transform:translateY(0); }
+  .login-error{
+    margin-top:14px;
+    font-size:12.5px;
+    color:#B34747;
+    display:none;
+  }
+
+  /* ---------- 리스트 ---------- */
+  .group-tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .group-tab{
+    padding:8px 16px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    font-size:13px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    background:#fff;
+    transition:all .15s ease;
+  }
+  .group-tab:hover{ border-color:var(--accent); color:var(--accent-deep); }
+  .group-tab.active{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+    box-shadow:0 3px 8px -2px rgba(43,38,34,0.28);
+  }
+  .group-tab.active:hover{ color:#fff; }
+  .list-meta{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .cand-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:12px;
+  }
+  .cand-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+    cursor:pointer;
+    box-shadow:var(--shadow-sm);
+    transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .cand-card:hover{
+    border-color:var(--accent);
+    box-shadow:var(--shadow-md);
+    transform:translateY(-2px);
+  }
+  .cand-card .name{
+    font-family:var(--font-brand);
+    font-size:19px;
+    font-weight:400;
+  }
+  .cand-card .meta{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .cand-card .status-row{
+    display:flex;
+    gap:6px;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+  .pill{
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:999px;
+    background:#F4F0E9;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+  .pill.done{
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    border-color:var(--accent-soft);
+  }
+
+  /* ---------- 상세 ---------- */
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--ink-soft);
+    cursor:pointer;
+    margin-bottom:18px;
+  }
+  .back-link:hover{ color:var(--accent-deep); }
+
+  .detail-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:1px solid var(--line);
+    padding-bottom:16px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .detail-head h2{
+    font-family:var(--font-brand);
+    font-weight:400;
+    font-size:30px;
+    margin:0;
+    letter-spacing:0;
+  }
+  .detail-head .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .detail-head .tagtype{
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    font-weight:600;
+    white-space:nowrap;
+  }
+
+  .section{ margin-bottom:30px; }
+  .section h3{
+    font-size:14px;
+    margin:0 0 12px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section h3::before{
+    content:"";
+    width:4px;
+    height:14px;
+    background:var(--accent);
+    border-radius:2px;
+    display:inline-block;
+  }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+  .info-cell{
+    background:#fff;
+    padding:11px 14px;
+  }
+  .info-cell .k{
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-bottom:3px;
+  }
+  .info-cell .v{
+    font-size:13.5px;
+    font-weight:600;
+  }
+
+  table.evtable{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    font-size:13px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+  table.evtable th, table.evtable td{
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+    padding:11px 10px;
+    text-align:center;
+  }
+  table.evtable th:last-child, table.evtable td:last-child{ border-right:none; }
+  table.evtable tbody tr td{ border-bottom:none; }
+  table.evtable th{
+    background:#F7F3EC;
+    color:var(--ink-soft);
+    font-weight:600;
+    font-size:11.5px;
+    letter-spacing:0.01em;
+  }
+  table.evtable td.empty{ color:#C9C0B3; }
+
+  .interview-form{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    box-shadow:var(--shadow-sm);
+  }
+  .iform-row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:14px;
+    align-items:center;
+    margin-bottom:14px;
+  }
+  .iform-row label{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .iform-row select, .iform-row textarea{
+    width:100%;
+    padding:9px 11px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:13.5px;
+    font-family:inherit;
+    background:#FFFEFC;
+  }
+  .iform-row textarea{ resize:vertical; min-height:64px; }
+  .iform-row select:focus, .iform-row textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .iform-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:6px;
+  }
+  .btn-save{
+    padding:11px 22px;
+    border:none;
+    border-radius:8px;
+    background:var(--ink);
+    color:#fff;
+    font-size:13.5px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(43,38,34,0.16);
+    transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+  }
+  .btn-save:hover{
+    background:var(--accent-deep);
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-1px);
+  }
+  .btn-save:active{ transform:translateY(0); }
+  .save-note{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:10px;
+    text-align:right;
+  }
+  .save-note.ok{ color:var(--accent-deep); }
+
+  .empty-hint{
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:30px 0;
+    text-align:center;
+  }
+
+  @media (max-width:640px){
+    .info-grid{ grid-template-columns:repeat(2,1fr); }
+    .iform-row{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ================= 로그인 ================= -->
+  <section id="screen-login" class="screen active">
+    <div class="login-box">
+      <div class="eyebrow">대웅바이오 · 직무급 재평가</div>
+      <h1>면접 참고자료 열람</h1>
+      <p class="desc">2026년 10월 직무재평가, 담당 그룹 대상자만 조회됩니다.</p>
+      <div class="field">
+        <label for="in-name">이름</label>
+        <input id="in-name" type="text" placeholder="예: 김민서" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="in-sabun">사번</label>
+        <input id="in-sabun" type="text" placeholder="사번 7자리" autocomplete="off">
+      </div>
+      <button class="submit" onclick="tryLogin()">조회하기</button>
+      <div class="login-error" id="login-error">이름 또는 사번이 일치하지 않습니다. 다시 확인해주세요.</div>
+    </div>
+  </section>
+
+  <!-- ================= 리스트 ================= -->
+  <section id="screen-list" class="screen">
+    <header class="top">
+      <div class="title">직무재평가 대상자<small>2026년 10월 · 심층/유관본부/최종 면접 참고자료</small></div>
+      <div class="who" style="display:flex;align-items:center;">
+        <span><b id="who-name"></b>님</span>
+        <button class="logout" onclick="logout()">로그아웃</button>
+      </div>
+    </header>
+    <div class="group-tabs" id="group-tabs"></div>
+    <div class="list-meta" id="list-meta"></div>
+    <div class="cand-grid" id="cand-grid"></div>
+  </section>
+
+  <!-- ================= 상세 ================= -->
+  <section id="screen-detail" class="screen">
+    <header class="top">
+      <div class="title">직무재평가 대상자<small>2026년 10월 · 심층/유관본부/최종 면접 참고자료</small></div>
+      <div class="who" style="display:flex;align-items:center;">
+        <span><b id="who-name-2"></b>님</span>
+        <button class="logout" onclick="logout()">로그아웃</button>
+      </div>
+    </header>
+    <div class="back-link" onclick="showList()">&larr; 대상자 목록으로</div>
+
+    <div class="detail-head">
+      <div>
+        <h2 id="d-name"></h2>
+        <div class="sub" id="d-sub"></div>
+      </div>
+      <div class="tagtype" id="d-tag"></div>
+    </div>
+
+    <div class="section">
+      <h3>기본 정보</h3>
+      <div class="info-grid" id="d-info"></div>
+    </div>
+
+    <div class="section">
+      <h3>평가 이력</h3>
+      <table class="evtable">
+        <thead>
+          <tr>
+            <th>4분기평가</th><th>'26 상반기</th><th>'25 하반기</th>
+            <th>'25 연종합</th><th>'24 연종합</th><th>'23 연종합</th><th>'22 연종합</th><th>'21 연종합</th>
+          </tr>
+        </thead>
+        <tbody id="d-eval-row"></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>지원직무</h3>
+      <div class="info-grid" id="d-apply"></div>
+    </div>
+
+    <div class="section">
+      <h3>면접 결과 입력</h3>
+      <div class="interview-form">
+        <div class="iform-row">
+          <label>심층면접</label>
+          <select id="f-deep">
+            <option value="">선택</option>
+            <option value="적합">적합</option>
+            <option value="조건부 적합">조건부 적합</option>
+            <option value="부적합">부적합</option>
+          </select>
+        </div>
+        <div class="iform-row">
+          <label>유관본부면접</label>
+          <select id="f-rel">
+            <option value="">선택</option>
+            <option value="적합">적합</option>
+            <option value="조건부 적합">조건부 적합</option>
+            <option value="부적합">부적합</option>
+          </select>
+        </div>
+        <div class="iform-row">
+          <label>최종(경영진)</label>
+          <select id="f-final">
+            <option value="">선택</option>
+            <option value="적합">적합</option>
+            <option value="조건부 적합">조건부 적합</option>
+            <option value="부적합">부적합</option>
+          </select>
+        </div>
+        <div class="iform-row">
+          <label>비고</label>
+          <textarea id="f-note" placeholder="면접 중 참고사항을 남겨주세요"></textarea>
+        </div>
+        <div class="iform-actions">
+          <button class="btn-save" onclick="saveInterview()">저장</button>
+        </div>
+        <div class="save-note" id="save-note"></div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+const CANDIDATES = [{"group": 1, "사번": 2600495, "성명": "이원규", "입사일_그룹": "2026-02-02 00:00:00", "입사일_바이오": "2026-02-02 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 6, "경력": "17년 10개월", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "CNE사업부", "팀": "CNE영업지점", "직책자": "장훈", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 1, "사번": 2600822, "성명": "김지훈", "입사일_그룹": "2023-06-01 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "3년 3개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "로컬사업부", "팀": "로컬지방1지점", "직책자": "모진종", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 4, "사번": 2601833, "성명": "민슬기", "입사일_그룹": "2022-06-02 00:00:00", "입사일_바이오": "2026-08-20 00:00:00", "근속_그룹": "4년 3개월", "근속_바이오": 0, "경력": "4년", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "바이오R&D센터", "팀": "바이오공정팀", "직책자": "배상우", "직책": "팀원", "현직무": "잡매니저(어쏘) R", "현직무발령일": "", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 4, "사번": 2601852, "성명": "김재권", "입사일_그룹": "2025-08-11 00:00:00", "입사일_바이오": "2026-08-20 00:00:00", "근속_그룹": "1년 0개월", "근속_바이오": 0, "경력": "7년 11개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오R&D센터", "팀": "바이오신약팀", "직책자": "장희정", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-08-11 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 3, "사번": 2500869, "성명": "박정은", "입사일_그룹": "2025-11-17 00:00:00", "입사일_바이오": "2025-11-17 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "3년 11개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오QC팀", "직책자": "박상익", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-17 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 3, "사번": 2500875, "성명": "이상원", "입사일_그룹": "2025-11-24 00:00:00", "입사일_바이오": "2025-11-24 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "5년", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "MSAT팀", "직책자": "김상필", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-24 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 3, "사번": 2600500, "성명": "박만춘", "입사일_그룹": "2026-01-12 00:00:00", "입사일_바이오": "2026-01-12 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "4년 1개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오QC팀", "직책자": "박상익", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-12 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 3, "사번": 2600687, "성명": "박진호", "입사일_그룹": "2026-03-16 00:00:00", "입사일_바이오": "2026-03-16 00:00:00", "근속_그룹": "0년 5개월", "근속_바이오": 5, "경력": "6년 7개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "바이오센터", "팀": "바이오제품팀", "직책자": "김진수", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-03-16 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 1, "사번": 2600496, "성명": "김병욱", "입사일_그룹": "2026-02-02 00:00:00", "입사일_바이오": "2026-02-02 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 6, "경력": "12년 3개월", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원경강사업부", "팀": "병원경인지점", "직책자": "유재인", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-02-02 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 1, "사번": 2600027, "성명": "홍명진", "입사일_그룹": "2026-01-05 00:00:00", "입사일_바이오": "2026-01-05 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 7, "경력": "11년", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울2지점", "직책자": "백정우", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-05 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 1, "사번": 2600818, "성명": "국경호", "입사일_그룹": "2003-01-23 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "23년 7개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울1지점", "직책자": "최진원", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 1, "사번": 2600817, "성명": "조석현", "입사일_그룹": "2010-01-21 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "16년 7개월", "근속_바이오": 5, "경력": "", "학력": "대학", "본부실": "CNS서울영업본부", "센터사업부": "병원서울1사업부", "팀": "병원서울1지점", "직책자": "최진원", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 6, "사번": 2501052, "성명": "윤주완", "입사일_그룹": "2025-12-01 00:00:00", "입사일_바이오": "2025-12-01 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "6년 1개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "세파센터", "팀": "세파QC팀", "직책자": "이호명", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-12-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 6, "사번": 2501153, "성명": "박승현", "입사일_그룹": "2026-01-05 00:00:00", "입사일_바이오": "2026-01-05 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 7, "경력": "6년 4개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "세파센터", "팀": "세파QC팀", "직책자": "이호명", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-05 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 5, "사번": 2500966, "성명": "옥창현", "입사일_그룹": "2025-11-24 00:00:00", "입사일_바이오": "2025-11-24 00:00:00", "근속_그룹": "0년 9개월", "근속_바이오": 9, "경력": "4년 9개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "안성센터", "팀": "안성QC팀", "직책자": "정대웅", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-24 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 7, "사번": 2501053, "성명": "김주영", "입사일_그룹": "2025-12-29 00:00:00", "입사일_바이오": "2025-12-29 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 8, "경력": "2년 2개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "원료센터", "팀": "원료QC팀", "직책자": "김대광", "직책": "팀원", "현직무": "어쏘©", "현직무발령일": "2025-12-29 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "어쏘", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 7, "사번": 3230106, "성명": "옥성민", "입사일_그룹": "2023-01-16 00:00:00", "입사일_바이오": "2023-01-16 00:00:00", "근속_그룹": "3년 7개월", "근속_바이오": 43, "경력": "", "학력": "", "본부실": "연구생산본부", "센터사업부": "원료센터", "팀": "원료생산관리팀", "직책자": "신인선", "직책": "팀원", "현직무": "잡멘토 어쏘®", "현직무발령일": "2026-01-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 4, "사번": 2501206, "성명": "홍지민", "입사일_그룹": "2025-12-23 00:00:00", "입사일_바이오": "2025-12-23 00:00:00", "근속_그룹": "0년 8개월", "근속_바이오": 8, "경력": "12년 11개월", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구팀", "직책자": "유민영", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-12-23 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡매니저(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 4, "사번": 2501207, "성명": "양다아", "입사일_그룹": "2026-01-12 00:00:00", "입사일_바이오": "2026-01-12 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "3년 9개월", "학력": "대학원(석사)", "본부실": "연구생산본부", "센터사업부": "제제연구센터", "팀": "제제연구팀", "직책자": "유민영", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-12 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 7, "사번": 2600077, "성명": "정혜민", "입사일_그룹": "2026-01-26 00:00:00", "입사일_바이오": "2026-01-26 00:00:00", "근속_그룹": "0년 7개월", "근속_바이오": 7, "경력": "박사신입", "학력": "대학원(박사)", "본부실": "연구생산본부", "센터사업부": "합성연구센터", "팀": "CDMO팀", "직책자": "강의수", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-01-26 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 7, "사번": 2600665, "성명": "최윤지", "입사일_그룹": "2026-03-09 00:00:00", "입사일_바이오": "2026-03-09 00:00:00", "근속_그룹": "0년 5개월", "근속_바이오": 5, "경력": "3년 4개월", "학력": "대학", "본부실": "연구생산본부", "센터사업부": "합성연구센터", "팀": "분석기획팀", "직책자": "홍중연", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-03-09 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 2, "사번": 2500857, "성명": "이환구", "입사일_그룹": "2025-11-03 00:00:00", "입사일_바이오": "2025-11-03 00:00:00", "근속_그룹": "0년 10개월", "근속_바이오": 9, "경력": "13년 6개월", "학력": "대학원(석사)", "본부실": "개발본부", "센터사업부": "", "팀": "개발팀", "직책자": "이지현", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-03 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡매니저(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 2, "사번": 2500858, "성명": "이하연", "입사일_그룹": "2025-11-03 00:00:00", "입사일_바이오": "2025-11-03 00:00:00", "근속_그룹": "0년 10개월", "근속_바이오": 9, "경력": "6년", "학력": "대학", "본부실": "개발본부", "센터사업부": "", "팀": "개발팀", "직책자": "이지현", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2025-11-03 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(어쏘)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}, {"group": 2, "사번": 2600786, "성명": "김지혜", "입사일_그룹": "2012-08-01 00:00:00", "입사일_바이오": "2026-04-01 00:00:00", "근속_그룹": "14년 1개월", "근속_바이오": 5, "경력": "", "학력": "초대전문대", "본부실": "대표이사직속", "센터사업부": "", "팀": "인사팀", "직책자": "", "직책": "팀원", "현직무": "경력직무재평가(R)", "현직무발령일": "2026-04-01 00:00:00", "심의기준": "직무재평가", "심의유형": "직무재평가", "지원직무_인사1차": "잡멘토(멘토)", "비고1": "", "지원직무_본부장": "", "비고2": "", "4분기평가": "", "2026상반기": "", "2025하반기": "", "연종합2025": "", "연종합2024": "", "연종합2023": "", "연종합2022": "", "연종합2021": ""}];
+const ROSTER = [{"name": "김민서", "sabun": "2210534", "groups": [1, 2, 3, 4, 5, 6, 7]}, {"name": "백정우", "sabun": "3151017", "groups": [1]}, {"name": "권우현", "sabun": "3190704", "groups": [1]}, {"name": "박정호", "sabun": "3220501", "groups": [1]}, {"name": "이지현", "sabun": "3160907", "groups": [2]}, {"name": "이준석", "sabun": "3220704", "groups": [2]}, {"name": "이지훈", "sabun": "2500876", "groups": [2]}, {"name": "박진우", "sabun": "3120103", "groups": [2]}, {"name": "고재호", "sabun": "3200401", "groups": [2]}, {"name": "박주남", "sabun": "3080303", "groups": [3]}, {"name": "이호진", "sabun": "3230701", "groups": [3]}, {"name": "이우식", "sabun": "3240505", "groups": [3]}, {"name": "한희", "sabun": "3240608", "groups": [3]}, {"name": "배상우", "sabun": "2601831", "groups": [4]}, {"name": "최민석", "sabun": "2500717", "groups": [4]}, {"name": "유민영", "sabun": "2500721", "groups": [4]}, {"name": "박민선", "sabun": "2601855", "groups": [4]}, {"name": "장희정", "sabun": "2601854", "groups": [4]}, {"name": "신익범", "sabun": "3230407", "groups": [5]}, {"name": "김장호", "sabun": "3230609", "groups": [5]}, {"name": "김광춘", "sabun": "3160716", "groups": [5]}, {"name": "손은희", "sabun": "3200406", "groups": [5]}, {"name": "정대웅", "sabun": "3191102", "groups": [5]}, {"name": "이호연", "sabun": "3240806", "groups": [6]}, {"name": "이상민", "sabun": "3231001", "groups": [6]}, {"name": "김윤철", "sabun": "3241002", "groups": [6]}, {"name": "이호명", "sabun": "3181140", "groups": [6]}, {"name": "윤종환", "sabun": "3250301", "groups": [6]}, {"name": "신인선", "sabun": "3030401", "groups": [7]}, {"name": "김영민", "sabun": "3200706", "groups": [7]}, {"name": "홍중연", "sabun": "3210304", "groups": [7]}, {"name": "김대광", "sabun": "3070702", "groups": [7]}];
+const GROUP_NAMES = {"1": "CNS서울영업본부", "2": "개발본부·대표이사직속", "3": "바이오센터", "4": "바이오R&D센터·제제연구센터", "5": "안성센터", "6": "세파센터", "7": "원료센터·합성연구센터"};
+
+let currentUser = null;
+let currentGroupFilter = null;
+let currentCandidate = null;
+const savedResults = {}; // 사번 -> {deep, rel, final, note}  (1차 데모용, 새로고침시 초기화)
+
+function tryLogin(){
+  const name = document.getElementById('in-name').value.trim();
+  const sabun = document.getElementById('in-sabun').value.trim();
+  const match = ROSTER.find(r => r.name === name && r.sabun === sabun);
+  const err = document.getElementById('login-error');
+  if(!match){
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+  currentUser = match;
+  currentGroupFilter = match.groups[0];
+  document.getElementById('who-name').textContent = match.name;
+  document.getElementById('who-name-2').textContent = match.name;
+  renderGroupTabs();
+  renderList();
+  switchScreen('screen-list');
+}
+
+function logout(){
+  currentUser = null;
+  document.getElementById('in-name').value = '';
+  document.getElementById('in-sabun').value = '';
+  switchScreen('screen-login');
+}
+
+function switchScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function renderGroupTabs(){
+  const wrap = document.getElementById('group-tabs');
+  wrap.innerHTML = '';
+  if(currentUser.groups.length <= 1) return;
+  currentUser.groups.forEach(g => {
+    const btn = document.createElement('div');
+    btn.className = 'group-tab' + (g === currentGroupFilter ? ' active' : '');
+    btn.textContent = GROUP_NAMES[g];
+    btn.onclick = () => { currentGroupFilter = g; renderGroupTabs(); renderList(); };
+    wrap.appendChild(btn);
+  });
+}
+
+function renderList(){
+  const list = CANDIDATES.filter(c => currentUser.groups.includes(c.group) && c.group === currentGroupFilter);
+  document.getElementById('list-meta').textContent =
+    GROUP_NAMES[currentGroupFilter] + ' · 대상자 ' + list.length + '명';
+  const grid = document.getElementById('cand-grid');
+  grid.innerHTML = '';
+  if(list.length === 0){
+    grid.innerHTML = '<div class="empty-hint">해당 그룹에 대상자가 없습니다.</div>';
+    return;
+  }
+  list.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'cand-card';
+    card.onclick = () => openDetail(c);
+    const r = savedResults[c.사번] || {};
+    card.innerHTML = `
+      <div class="name">${c.성명}</div>
+      <div class="meta">${c.센터사업부 || c.본부실}${c.팀 ? ' · ' + c.팀 : ''}</div>
+      <div class="meta" style="margin-top:2px;">${c.현직무 || '-'}</div>
+      <div class="status-row">
+        <span class="pill ${r.deep ? 'done':''}">심층면접${r.deep ? ' ✓' : ''}</span>
+        <span class="pill ${r.rel ? 'done':''}">유관본부${r.rel ? ' ✓' : ''}</span>
+        <span class="pill ${r.final ? 'done':''}">최종${r.final ? ' ✓' : ''}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function showList(){
+  renderList();
+  switchScreen('screen-list');
+}
+
+function openDetail(c){
+  currentCandidate = c;
+  document.getElementById('d-name').textContent = c.성명;
+  document.getElementById('d-sub').textContent =
+    `${c.본부실}${c.센터사업부 ? ' · ' + c.센터사업부 : ''}${c.팀 ? ' · ' + c.팀 : ''} · ${c.직책 || ''}`;
+  document.getElementById('d-tag').textContent = c.심의유형 || c.심의기준;
+
+  const infoFields = [
+    ['현직무', c.현직무], ['현직무발령일', fmtDate(c.현직무발령일)], ['학력', c.학력],
+    ['총경력', c.경력], ['입사일(그룹)', fmtDate(c.입사일_그룹)], ['근속(그룹)', c.근속_그룹],
+  ];
+  document.getElementById('d-info').innerHTML = infoFields.map(([k,v]) => `
+    <div class="info-cell"><div class="k">${k}</div><div class="v">${v || '-'}</div></div>
+  `).join('');
+
+  const ev = [c['4분기평가'], c['2026상반기'], c['2025하반기'], c['연종합2025'], c['연종합2024'], c['연종합2023'], c['연종합2022'], c['연종합2021']];
+  document.getElementById('d-eval-row').innerHTML = '<tr>' +
+    ev.map(v => v ? `<td>${v}</td>` : `<td class="empty">-</td>`).join('') + '</tr>';
+
+  const applyFields = [
+    ['지원직무(인사1차)', c.지원직무_인사1차], ['지원직무(본부장)', c.지원직무_본부장],
+  ];
+  document.getElementById('d-apply').innerHTML = applyFields.map(([k,v]) => `
+    <div class="info-cell"><div class="k">${k}</div><div class="v">${v || '-'}</div></div>
+  `).join('');
+
+  const r = savedResults[c.사번] || {};
+  document.getElementById('f-deep').value = r.deep || '';
+  document.getElementById('f-rel').value = r.rel || '';
+  document.getElementById('f-final').value = r.final || '';
+  document.getElementById('f-note').value = r.note || '';
+  document.getElementById('save-note').textContent = '';
+  document.getElementById('save-note').className = 'save-note';
+
+  switchScreen('screen-detail');
+}
+
+function fmtDate(s){
+  if(!s) return '';
+  const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${m[1]}.${m[2]}.${m[3]}` : s;
+}
+
+function saveInterview(){
+  const c = currentCandidate;
+  savedResults[c.사번] = {
+    deep: document.getElementById('f-deep').value,
+    rel: document.getElementById('f-rel').value,
+    final: document.getElementById('f-final').value,
+    note: document.getElementById('f-note').value,
+  };
+  const note = document.getElementById('save-note');
+  note.textContent = '임시 저장되었습니다 (1차 화면 · 실제 시트 연동은 2차에서 적용 예정)';
+  note.className = 'save-note ok';
+}
+
+document.getElementById('in-sabun').addEventListener('keydown', e => {
+  if(e.key === 'Enter') tryLogin();
+});
+</script>
+</body>
+</html>
