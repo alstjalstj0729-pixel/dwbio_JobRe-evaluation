@@ -798,7 +798,7 @@ function buildOverallChartSVG(years, grades){
     dots.push(`<circle cx="${x(i)}" cy="${yy}" r="4.5" fill="#DD7A3C"/>`);
   });
   const areaPath = path ? path + ` L ${x(n-1)} ${padT+innerH} L ${x(0)} ${padT+innerH} Z` : '';
-  const yTicks = ['S','B+','C+','D'];
+  const yTicks = ['S','A','B+','B','C+','C','D'];
   const gridLines = yTicks.map(g => {
     const yy = y(g);
     return `<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="#EFEAE1" stroke-width="1"/>
@@ -846,7 +846,7 @@ function renderOverallTab(c){
 
 let currentMonthIndex = 0;
 
-const GRADE_SCALE = ['D','C','C+','B','B+','A','A+','S'];
+const GRADE_SCALE = ['D','C','C+','B','B+','A','S'];
 const GRADE_COLOR = {
   'S':'#7C5CFC', 'A+':'#5B8DEF', 'A':'#3B82F6',
   'B+':'#DD7A3C', 'B':'#E9A23B', 'C+':'#D97706',
@@ -879,7 +879,7 @@ function buildMonthlyChartSVG(months){
   const selfPath = pathFor('self');
   const areaPath = mgrPath ? mgrPath + ` L ${x(n-1)} ${padT+innerH} L ${x(0)} ${padT+innerH} Z` : '';
 
-  const yTicks = ['S','B+','C+','D'];
+  const yTicks = ['S','A','B+','B','C+','C','D'];
   const gridLines = yTicks.map(g => {
     const yy = y(g);
     return `<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="#EFEAE1" stroke-width="1"/>
