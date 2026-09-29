@@ -624,14 +624,6 @@
     line-height:1.6;
   }
   .aiq-quote-src{ display:block; font-size:10.5px; font-weight:700; color:var(--accent-deep); margin-bottom:2px; }
-  .aiq-tail2{
-    margin-top:7px;
-    padding-top:7px;
-    border-top:1px dashed var(--line);
-    font-size:11.5px;
-    color:var(--ink-soft);
-    line-height:1.6;
-  }
   .aiq-tag{
     display:inline-block; margin-top:6px; font-size:10.5px; font-weight:600;
     padding:2px 8px; border-radius:5px; background:#F1EDE6; color:var(--ink-soft);
@@ -1375,12 +1367,6 @@ const COMMON_QS = {
   },
 };
 
-const TAIL_GENERIC = [
-  '“업무가 좋아졌습니다” 처럼 답하면 → 개선 전과 후에 구체적으로 무엇이 달라졌습니까?',
-  '“팀원들과 같이 했습니다” 처럼 답하면 → 그 과정에서 본인이 맡은 역할과 직접 결정·실행한 것은 무엇입니까?',
-  '“많이 줄었습니다” 처럼 답하면 → 얼마에서 얼마로 줄었습니까? 수치가 없다면 어떤 사실로 확인할 수 있습니까?',
-];
-
 function levelKey(job){
   if(!job) return null;
   if(job.indexOf('잡매니저') !== -1 || job.indexOf('팀장') !== -1 || job.indexOf('센터장') !== -1) return '잡매니저';
@@ -1398,7 +1384,6 @@ const STAR_FIELDS = [
       '이 상황에서 본인에게 요구된 역할은 무엇이었습니까?',
       '왜 이 문제를 중요하다고 판단하셨습니까?',
     ],
-    term: v => `‘${v}’는 구체적으로 어떤 업무이고, 이 상황에서 왜 문제가 되었습니까?`,
     num:  v => `‘${v}’ 규모의 상황이라고 하셨는데, 그 규모를 실제로 어떻게 체감하셨습니까?`,
     plain: [
       '지원서 상황에 적으신 문제는 구체적으로 어떤 것이었습니까?',
@@ -1659,17 +1644,18 @@ function fbQuestion(pool, shown, usedThemes){
     const chosen = pickText(texts, shown);
     const s2 = pool2.find(e => e.text === chosen) || pool2[0];
     const d = extractDetail(chosen);
-    text = (d && def[d.type]) ? def[d.type](d.value) : def.follow;
+    const usedInMain = !!(d && def[d.type]);
+    text = usedInMain ? def[d.type](d.value) : def.follow;
     quote = shortQuote(chosen, 90);
     source = '월별피드백 · ' + s2.src;
   } else {
     text = pickText(def.plain, shown);
   }
-  return { tag: '월별피드백 · ' + th.label, text: text, quote: quote, source: source, tail: randOf(TAIL_GENERIC) };
+  return { tag: '월별피드백 · ' + th.label, text: text, quote: quote, source: source };
 }
 
 function levelQuestion(pool, shown){
-  return { tag: pool.level + ' 핵심 확인', text: pickText(pool.levelQs, shown), tail: randOf(TAIL_GENERIC) };
+  return { tag: pool.level + ' 핵심 확인', text: pickText(pool.levelQs, shown) };
 }
 
 /* 추가 확인 질문 5개: 지원서가 있으면 S→T→A→R 순서 4개 + 1개, 없으면 월별피드백·직무단계 질문 */
@@ -1684,13 +1670,14 @@ function pickQuestions(pool, shown){
         const chosen = pickText(texts, shown);
         const s = f.ev.find(e => e.text === chosen) || f.ev[0];
         const d = extractDetail(chosen);
-        text = (d && f[d.type]) ? f[d.type](d.value) : randOf(f.qs);
+        const usedInMain = !!(d && f[d.type]);
+        text = usedInMain ? f[d.type](d.value) : randOf(f.qs);
         quote = shortQuote(chosen, 90);
         source = f.area;
       } else {
         text = pickText(f.plain, shown);
       }
-      picked.push({ tag: f.key + ' · ' + f.label, text: text, quote: quote, source: source, tail: f.tail });
+      picked.push({ tag: f.key + ' · ' + f.label, text: text, quote: quote, source: source });
     });
     picked.push(pool.themes.length ? fbQuestion(pool, shown, usedThemes) : levelQuestion(pool, shown));
   } else {
@@ -1756,7 +1743,6 @@ function renderQuestions(c){
         ${q.quote ? `<div class="aiq-quote"><span class="aiq-quote-src">발췌 · ${escHtml(q.source)}</span>“${escHtml(q.quote)}”</div>` : ''}
         <div class="aiq-q">${escHtml(q.text)}</div>
         <span class="aiq-tag">${escHtml(q.tag)}</span>
-        ${q.tail ? `<div class="aiq-tail2">▸ 꼬리질문 · ${escHtml(q.tail)}</div>` : ''}
       </div>
     </li>`).join('') + '</ol>';
 }
