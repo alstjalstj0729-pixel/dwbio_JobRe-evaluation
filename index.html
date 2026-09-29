@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2026년 10월 직무재평가 확정</title>
+<title>대웅바이오 10월 직무재평가 심의</title>
 <link rel="stylesheet" as="style" crossorigin
   href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>
@@ -577,6 +577,66 @@
   }
   .badge .d{ font-weight:400; color:var(--ink-soft); margin-left:6px; }
 
+  /* ---------- 면접 질문 추천 ---------- */
+  .aiq-meta{ font-size:12.5px; color:var(--ink-soft); line-height:1.7; }
+  .aiq-meta b{ color:var(--ink); font-weight:700; margin-right:4px; }
+  .aiq-sep{ margin:0 8px; color:var(--ink-faint); }
+  .aiq-basis{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:10px; font-size:12px; color:var(--ink-soft); }
+  .aiq-basis b{ color:var(--ink); font-weight:700; margin-right:4px; }
+  .aiq-basis span{ padding:3px 9px; border-radius:5px; background:var(--accent-soft); color:var(--accent-deep); font-weight:600; }
+  .aiq-note{ margin-top:10px; padding:9px 12px; border-radius:6px; background:#F1EDE6; font-size:12px; color:var(--ink-soft); line-height:1.6; }
+  .aiq-block{ margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+  .aiq-block-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .aiq-block-title{ font-size:13.5px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+  .aiq-block-title small{ font-size:11.5px; font-weight:400; color:var(--ink-soft); margin-left:6px; }
+  .aiq-block .aiq-desc{ margin-bottom:6px; }
+  .aiq-head{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+  .aiq-desc{ font-size:12.5px; color:var(--ink-soft); line-height:1.6; flex:1; min-width:220px; }
+  .aiq-actions{ display:flex; gap:8px; }
+  .btn-aiq{
+    padding:9px 16px; border:1px solid var(--accent); border-radius:6px;
+    background:var(--accent); color:#fff; font-size:12.5px; font-weight:700;
+    font-family:inherit; cursor:pointer; transition:background .12s ease;
+  }
+  .btn-aiq:hover{ background:var(--accent-deep); }
+  .btn-aiq:disabled{ background:#D4CCC0; border-color:#D4CCC0; cursor:not-allowed; }
+  .btn-aiq.ghost{ background:#fff; color:var(--accent-deep); }
+  .btn-aiq.ghost:hover{ background:var(--accent-soft); }
+  .aiq-list{ list-style:none; margin:0; padding:0; }
+  .aiq-item{ display:flex; gap:12px; padding:13px 0; border-bottom:1px solid var(--line); }
+  .aiq-item:last-child{ border-bottom:none; }
+  .aiq-num{
+    flex-shrink:0; width:22px; height:22px; border-radius:6px;
+    background:var(--accent-soft); color:var(--accent-deep);
+    font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center;
+  }
+  .aiq-body{ flex:1; }
+  .aiq-q{ font-size:13.5px; line-height:1.7; color:var(--ink); }
+  .aiq-ev{ margin-top:5px; font-size:11.5px; line-height:1.5; color:var(--ink-faint); }
+  .aiq-quote{
+    border-left:3px solid var(--accent);
+    background:#FAF8F4;
+    padding:8px 12px;
+    margin-bottom:7px;
+    border-radius:0 6px 6px 0;
+    font-size:12px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .aiq-quote-src{ display:block; font-size:10.5px; font-weight:700; color:var(--accent-deep); margin-bottom:2px; }
+  .aiq-tail2{
+    margin-top:7px;
+    padding-top:7px;
+    border-top:1px dashed var(--line);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .aiq-tag{
+    display:inline-block; margin-top:6px; font-size:10.5px; font-weight:600;
+    padding:2px 8px; border-radius:5px; background:#F1EDE6; color:var(--ink-soft);
+  }
+
   /* ---------- 직무급 지원서 ---------- */
   .star-block{ margin-bottom:16px; }
   .star-block:last-child{ margin-bottom:0; }
@@ -622,9 +682,9 @@
         </div>
         <div class="lb-mid">
           <div class="lb-tag">● 2026 · OCTOBER</div>
-          <h1>직무재평가<br>확정</h1>
-          <p class="lb-en">Job Re-evaluation Confirmation</p>
-          <p class="lb-desc">담당 대상자의 최종 직무를<br>확정해 주세요.</p>
+          <h1>대웅바이오 10월<br>직무재평가 심의</h1>
+          <p class="lb-en">Job Re-evaluation Review</p>
+          <p class="lb-desc">담당 대상자의 자료를 확인하고<br>면접에 참고해 주세요.</p>
         </div>
         <div class="lb-bottom">시스템 이용 문의는 HR 담당자에게 연락하세요</div>
       </div>
@@ -748,6 +808,25 @@
         <div class="card">
           <h3><span class="sec-num">7</span>직무급 지원서</h3>
           <div id="d-jobgrade"></div>
+        </div>
+
+        <div class="card">
+          <h3><span class="sec-num">8</span>면접 질문 추천</h3>
+          <div id="aiq-intro"></div>
+
+          <div class="aiq-block">
+            <div class="aiq-block-title">① 공통 질문 <small id="aiq-common-sub"></small></div>
+            <ol class="aiq-list" id="aiq-common"></ol>
+          </div>
+
+          <div class="aiq-block">
+            <div class="aiq-block-head">
+              <div class="aiq-block-title">② 이 지원자에게 추가로 확인할 질문 <small>지원서 STAR · 월별피드백 기반</small></div>
+              <div class="aiq-actions"><button class="btn-aiq" id="aiq-gen" onclick="generateQuestions()">질문 생성</button></div>
+            </div>
+            <div class="aiq-desc" id="aiq-desc"></div>
+            <div id="d-aiq"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1183,9 +1262,514 @@ function openDetail(c){
   document.querySelectorAll('.eval-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === 'overall'));
   document.querySelectorAll('.eval-panel').forEach(p => p.classList.toggle('active', p.id === 'eval-overall'));
   switchEvalTab('overall');
+  initQuestions(c);
 
   switchScreen('screen-detail');
 }
+
+/* ---------- 면접 질문 추천 (교육자료 기준: 직무단계 공통 질문 + 지원서 STAR 확인 + 월별피드백 확인) ---------- */
+// AIQ_START
+const qState = {};
+
+function escHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function splitSentences(text){
+  if(!text) return [];
+  const out = [];
+  String(text).split(/\n+/).forEach(line => {
+    const parts = line.match(/[^.!?。]+[.!?。]?/g) || [];
+    parts.forEach(p => out.push(p));
+  });
+  return out;
+}
+
+function cleanSnippet(s){
+  let t = String(s).replace(/\s+/g, ' ').trim();
+  for(let i = 0; i < 5; i++){
+    const next = t
+      .replace(/^(\d+\s*[.)]|[-•·▶※]|[①-⑩]|[가-하]\)|\[[^\]]{1,20}\]|\(\d+\))\s*/, '')
+      .replace(/^[:：,;·\-–—\s]+/, '')
+      .replace(/^(특히|또한|그리고|다만|아울러|이에|이를 위해)[,\s]+/, '')
+      .trim();
+    if(next === t) break;
+    t = next;
+  }
+  return t;
+}
+
+function shortQuote(s, n){
+  n = n || 64;
+  if(s.length <= n) return s;
+  const cut = s.slice(0, n);
+  const sp = cut.lastIndexOf(' ');
+  return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[,.\s]+$/, '') + '…';
+}
+
+function moLabel(month){
+  return parseInt(String(month).slice(5), 10) + '월';
+}
+
+/* 발췌 문장에서 숫자·전문용어를 뽑아 질문을 더 구체적으로 만듭니다 */
+const NUM_RE = /(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\s*(?:%|퍼센트|억원?|만원?|건|개월|일간|배|공수|점|톤|kg|명)/;
+const TERM_RE = /[A-Z]{2,}\d*(?:[\/\-][A-Z0-9]+)*/g;
+const TERM_BLOCKLIST = new Set([
+  'STAR','KPI','SOP','GMP','QA','QC','RA','TF','TFT','DC','BD','ABM','DTM',
+  'MOQ','SF','TPP','CDP','OKR','PM','PL','PV','HR','IT','CEO','WMS','MES',
+  'SCM','RFP','NDA','MSA','IND','IRB','KOL','CRO','CRA','DM','EDC','GCP',
+  'ICH','USP','EP','CTD','PMS','DI','CAPA','OOS','HTS','ESV','MV','IQ','OQ',
+  'PQ','IOQ','URS','SIA','R&R','CNE','CNS','PNA','NTW','NDC','FMEA','LES',
+  'QMS','TMMS','LMO','BE','IPC','SDS','LOD','LOQ','DS','DP','CQA','CPP',
+]);
+
+function extractDetail(text){
+  const n = text.match(NUM_RE);
+  if(n) return { type: 'num', value: n[0] };
+  const matches = text.match(TERM_RE) || [];
+  const t = matches.find(m => !TERM_BLOCKLIST.has(m.replace(/[\/\-]/g, '')) && !TERM_BLOCKLIST.has(m));
+  if(t) return { type: 'term', value: t };
+  return null;
+}
+
+function isUsableSentence(s){
+  return s.length >= 15 && !/^[는은이가을를의에와과도로]\s/.test(s);
+}
+
+/* ===== 교육자료(9/29) 직무단계별 공통 질문 1차안 — 원문 그대로 ===== */
+const COMMON_QS = {
+  '어쏘': {
+    area: '학습 · 소통/협력 · 실행',
+    core: '학습·협력을 통해 맡은 업무를 기준과 기한에 맞게 수행한 결과',
+    qs: [
+      { t: '현재 담당하는 본질업무와 필요한 지식·역량은 무엇입니까?', a: '학습' },
+      { t: '부족한 역량을 학습하여 업무에 적용한 사례는 무엇입니까?', a: '학습' },
+      { t: '피드백을 반영하여 업무를 보완한 사례는 무엇입니까?', a: '소통·협력' },
+      { t: '다른 사람과 협력하여 문제를 해결한 사례는 무엇입니까?', a: '소통·협력' },
+      { t: '어려움을 해결하고 맡은 업무를 완수한 사례는 무엇입니까?', a: '실행' },
+    ],
+  },
+  '잡멘토': {
+    area: '학습 · 소통/협력 · 실행',
+    core: '성공원리를 정리·전수하고, 상대방의 수행 수준을 높인 결과',
+    qs: [
+      { t: '본인 업무에서 축적한 지식·경험과 성공원리는 무엇입니까?', a: '학습' },
+      { t: '성공원리를 활용하여 업무를 개선한 사례는 무엇입니까?', a: '실행' },
+      { t: '유관부서 또는 구성원과 협력하여 성과를 만든 사례는 무엇입니까?', a: '소통·협력' },
+      { t: '자신의 노하우를 다른 사람에게 어떻게 설명하고 가르쳤습니까?', a: '소통·협력' },
+      { t: '노하우를 전수받은 사람의 업무수행이 어떻게 달라졌습니까?', a: '실행' },
+    ],
+  },
+  '잡매니저': {
+    area: '문제의식 · 변화혁신 · 확산',
+    core: '문제와 Gap을 찾아 성과를 만들고, 개선방식을 다른 사람·조직에 확산한 결과',
+    qs: [
+      { t: '본질업무의 작동원리와 개선이 필요한 문제는 무엇입니까?', a: '문제의식' },
+      { t: '목표 대비 현재 수준의 Gap은 무엇이었습니까?', a: '문제의식' },
+      { t: '기존과 다른 어떤 방법을 실행했습니까?', a: '변화혁신' },
+      { t: '변화혁신 과정에서 본인이 주도한 역할은 무엇입니까?', a: '변화혁신' },
+      { t: '실행 전후 어떤 구체적인 성과가 발생했습니까?', a: '변화혁신' },
+      { t: '개선방식을 다른 사람이나 조직에 어떻게 전파했습니까?', a: '확산' },
+      { t: '변화가 지속되도록 표준화·관리한 방법은 무엇입니까?', a: '확산' },
+    ],
+  },
+};
+
+const TAIL_GENERIC = [
+  '“업무가 좋아졌습니다” 처럼 답하면 → 개선 전과 후에 구체적으로 무엇이 달라졌습니까?',
+  '“팀원들과 같이 했습니다” 처럼 답하면 → 그 과정에서 본인이 맡은 역할과 직접 결정·실행한 것은 무엇입니까?',
+  '“많이 줄었습니다” 처럼 답하면 → 얼마에서 얼마로 줄었습니까? 수치가 없다면 어떤 사실로 확인할 수 있습니까?',
+];
+
+function levelKey(job){
+  if(!job) return null;
+  if(job.indexOf('잡매니저') !== -1 || job.indexOf('팀장') !== -1 || job.indexOf('센터장') !== -1) return '잡매니저';
+  if(job.indexOf('잡멘토') !== -1) return '잡멘토';
+  if(job.indexOf('어쏘') !== -1) return '어쏘';
+  return null;
+}
+
+/* ===== 지원서 STAR 확인 질문 (교육자료 15쪽: S=상황, T=과제·목표, A=전략·한일, R=결과) ===== */
+const STAR_FIELDS = [
+  { key: 'S', label: '상황', src: ['상황'], area: '지원서 · 상황',
+    qs: [
+      '이 상황에서 가장 큰 문제는 무엇이었습니까?',
+      '이 문제를 처음 인식한 계기는 무엇이었습니까?',
+      '이 상황에서 본인에게 요구된 역할은 무엇이었습니까?',
+      '왜 이 문제를 중요하다고 판단하셨습니까?',
+    ],
+    term: v => `‘${v}’는 구체적으로 어떤 업무이고, 이 상황에서 왜 문제가 되었습니까?`,
+    num:  v => `‘${v}’ 규모의 상황이라고 하셨는데, 그 규모를 실제로 어떻게 체감하셨습니까?`,
+    plain: [
+      '지원서 상황에 적으신 문제는 구체적으로 어떤 것이었습니까?',
+      '지원서에 적으신 상황에서 가장 큰 문제는 무엇이었고, 왜 중요하다고 판단하셨습니까?',
+    ],
+    tail: '“팀 전체의 문제였습니다” 등 뭉뚱그려 답하면 → 그 상황에서 본인이 직접 확인하거나 판단한 부분은 무엇이었습니까?' },
+  { key: 'T', label: '과제·목표', src: ['과제', '목표'], area: '지원서 · 과제·목표',
+    qs: [
+      '이 목표를 이루기 위해 본인이 맡은 역할은 무엇이었습니까?',
+      '이 목표는 어떤 기준으로 정하셨습니까?',
+      '이 과제에서 본인에게 주어진 책임과 권한은 어디까지였습니까?',
+      '목표 달성 여부는 어떤 지표로 확인하기로 하셨습니까?',
+    ],
+    term: v => `‘${v}’ 관련 과제에서 본인이 맡은 역할과 목표는 무엇이었습니까?`,
+    num:  v => `목표를 ‘${v}’로 잡으신 근거는 무엇이었습니까?`,
+    plain: [
+      '지원서에 적으신 과제에서 본인이 맡은 역할과 목표는 무엇이었습니까?',
+      '지원서의 목표를 어떤 기준으로 정했고, 당시 현재 수준과의 Gap은 얼마였습니까?',
+    ],
+    tail: '“최대한 좋게 만들려고 했습니다” 등 막연하게 답하면 → 목표를 숫자나 기준으로 말한다면 무엇이었습니까?' },
+  { key: 'A', label: '전략·한일', src: ['전략', '한일'], area: '지원서 · 전략·한일',
+    qs: [
+      '이 중 본인이 직접 판단하고 실행한 것은 무엇입니까?',
+      '실제로 어떤 순서로 진행하셨는지 설명해 주세요.',
+      '기존 방식과 다르게 시도한 부분은 무엇이고, 왜 그렇게 하셨습니까?',
+      '진행하면서 예상과 달랐던 점은 무엇이었고, 어떻게 대응하셨습니까?',
+    ],
+    term: v => `‘${v}’를 실제로 어떻게 활용하거나 진행하셨는지 순서대로 설명해 주세요.`,
+    num:  v => `‘${v}’ 만큼 진행하신 과정에서 본인이 직접 판단하고 실행한 부분은 무엇입니까?`,
+    plain: [
+      '지원서에 적으신 전략 중 본인이 직접 판단하고 실행한 것은 무엇입니까?',
+      '지원서에 적으신 개선을 위해 실제로 어떤 조치를 했는지 순서대로 설명해 주세요.',
+    ],
+    tail: '“팀원들과 같이 했습니다” 처럼 답하면 → 그 과정에서 본인이 맡은 역할과 직접 결정·실행한 것은 무엇입니까?' },
+  { key: 'R', label: '결과', src: ['결과(최종성과)'], area: '지원서 · 결과',
+    qs: [
+      '이 결과는 수치나 사실로 어떻게 확인할 수 있습니까?',
+      '이 결과 중 본인의 행동이 직접 만든 부분은 어디까지입니까?',
+      '이 결과를 누가, 어떻게 확인했습니까?',
+      '목표 대비 이 결과는 어느 정도였습니까?',
+    ],
+    term: v => `‘${v}’ 결과가 나왔다고 하셨는데, 본인의 행동이 직접 만든 부분은 어디까지입니까?`,
+    num:  v => `‘${v}’이라는 수치는 어떻게 측정하거나 확인하신 겁니까?`,
+    plain: [
+      '지원서에 적으신 결과에서, 실행 전후로 무엇이 어떻게 달라졌습니까? 수치나 사실로 확인할 수 있는 것은 무엇입니까?',
+      '지원서에 적은 결과 중 본인의 행동이 직접 만든 부분은 어디까지입니까?',
+    ],
+    tail: '“많이 줄었습니다” 처럼 답하면 → 얼마에서 얼마로 줄었습니까? 수치가 없다면 어떤 사실로 확인할 수 있습니까?' },
+];
+
+/* 지원 직무단계 핵심 기준을 확인하는 추가 질문 (교육자료 평가기준 19쪽 기반, 과거 행동형) */
+const LEVEL_QS = {
+  '어쏘': [
+    '맡은 업무를 기준과 기한에 맞게 끝낸 사례에서, 본인이 직접 한 일과 도움을 받은 부분을 나눠서 설명해 주세요.',
+    '새로 배운 지식이나 방법을 실제 업무에 적용한 사례에서, 적용 전후로 무엇이 달라졌습니까?',
+    '선배나 상사의 피드백을 받아 업무를 고친 사례에서, 고친 뒤 결과는 어땠습니까?',
+    '다른 사람과 협력해 문제를 해결한 사례에서 본인이 맡은 역할은 무엇이었습니까?',
+    '어려움이 있었지만 업무를 끝까지 완수한 사례에서, 그 어려움을 어떻게 넘으셨습니까?',
+  ],
+  '잡멘토': [
+    '본인의 노하우를 정리해서 다른 사람에게 전수한 사례에서, 어떤 방법으로 가르치셨습니까?',
+    '노하우를 전수받은 사람의 업무수행이 실제로 어떻게 달라졌습니까? 확인할 수 있는 사실은 무엇입니까?',
+    '본인의 성공원리를 활용해 업무를 개선한 사례에서, 개선 전후로 무엇이 달라졌습니까?',
+    '유관부서와 협력해 성과를 만든 사례에서 본인이 직접 한 일은 무엇입니까?',
+    '가르치는 과정에서 잘 전달되지 않았던 경험이 있다면, 어떻게 방식을 바꾸셨습니까?',
+  ],
+  '잡매니저': [
+    '개선이 필요하다고 본 문제와 목표 대비 Gap은 무엇이었고, 어떤 근거로 그렇게 판단하셨습니까?',
+    '기존과 다른 방법을 실행한 사례에서, 그 방법이 문제의 원인을 어떻게 해결했습니까?',
+    '개선 결과를 다른 사람이나 조직에 전파한 사례에서, 전파 후 추가로 달라진 점은 무엇입니까?',
+    '변화가 일회성으로 끝나지 않도록 표준화하거나 관리한 사례가 있다면 무엇입니까?',
+    '개선 과정에서 반대나 저항이 있었다면, 실제로 어떻게 설득하고 실행하셨습니까?',
+    '개선 전후의 성과를 수치나 사실로 확인한 방법은 무엇입니까?',
+  ],
+};
+
+/* ===== 월별피드백 '개선할 점' 확인 질문: 주제 추출 → 과거 행동·결과를 묻는 질문은행 ===== */
+const FB_THEMES = [
+  { key: 'schedule', label: '일정·기한 관리',
+    re: /일정|기한|마감|납기|지연|F\/up|스케줄|(?:\d+월\s?(?:말|초|\d+일)?|\d+\/\d+|주\s?차).{0,6}(?:까지|이내|내)|까지\s?(?:완료|마무리|확정|제출|보고|정리|진행)/,
+    follow: '이후 일정 관리 방식을 어떻게 바꾸셨습니까?',
+    term: v => `‘${v}’ 일정과 관련해, 실제로 어떻게 관리하고 지키셨습니까?`,
+    num: v => `‘${v}’ 기한과 관련해, 실제로 어떻게 관리하고 지키셨습니까?`,
+    plain: ['최근 마감이 촉박했던 업무에서 우선순위를 어떻게 정했고, 실제로 어떻게 마무리하셨습니까?'] },
+  { key: 'report', label: '보고·문서화',
+    re: /보고|문서|기록|정리|취합|작성|SOP|계획서|승인|리포트|자료/,
+    follow: '이 의견을 받은 뒤 실제로 무엇을 바꾸셨습니까?',
+    term: v => `‘${v}’ 관련 문서나 보고에서, 실제로 무엇을 어떻게 정리하셨습니까?`,
+    plain: ['보고한 내용에 보완 요청을 받았을 때 실제로 어떻게 다시 정리해 반영하셨습니까?'] },
+  { key: 'comm', label: '소통·협업',
+    re: /소통|협업|공유|협의|조율|커뮤니케이션|유관\s?부서|부서\s?간|이해관계|미팅|회의/,
+    follow: '이후 협업 방식을 어떻게 바꾸셨습니까?',
+    term: v => `‘${v}’와 관련한 협업에서, 실제로 어떻게 조율하셨습니까?`,
+    plain: ['다른 부서와 의견이 엇갈렸을 때 실제로 어떻게 조율해 결론을 냈습니까?'] },
+  { key: 'issue', label: '이슈 대응·문제 해결',
+    re: /이슈|원인|개선안|대응|해결|일탈|재발|트러블|보완|리스크|문제|오류|불일치|누락|클레임/,
+    follow: '이 문제를 해결하기 위해 실제로 무엇을 바꾸셨습니까?',
+    term: v => `‘${v}’ 문제와 관련해, 실제로 어떤 조치를 하셨습니까?`,
+    plain: ['예상치 못한 문제가 생겼을 때 원인을 파악해 해결까지 이끈 사례는 무엇이고, 본인이 직접 한 조치는 무엇입니까?'] },
+  { key: 'goal', label: '목표·성과 관리',
+    re: /KPI|목표|성과|달성|매출|지표|실적|PoC|과제/,
+    follow: '이후 무엇을 다르게 실행하셨습니까?',
+    term: v => `‘${v}’ 목표와 관련해, 실제로 무엇을 다르게 실행하셨습니까?`,
+    num: v => `‘${v}’라는 목표를 실제로 어떻게 달성하거나 관리하셨습니까?`,
+    plain: ['올해 목표 중 성과가 아쉬웠던 것은 무엇이고, 이후 어떤 조치를 했습니까?'] },
+  { key: 'learn', label: '전문성·역량 개발',
+    re: /학습|이해|역량|전문|부족|교육|공부|숙지|지식|경험/,
+    follow: '이 부분을 어떻게 보완하셨습니까?',
+    term: v => `‘${v}’와 관련한 역량을, 실제로 어떻게 학습해 업무에 적용하셨습니까?`,
+    plain: ['최근 1년 사이에 새로 익힌 지식이나 기술을 업무에 적용해 결과를 만든 사례는 무엇입니까?'] },
+  { key: 'initiative', label: '주도성·프로세스 개선',
+    re: /주도|제안|확대|고도화|체계|프로세스|자동화|혁신|시스템|구축|정립|기획|확립/,
+    follow: '이 의견을 받은 뒤 스스로 개선한 부분이 있습니까?',
+    term: v => `‘${v}’와 관련해, 본인이 직접 개선하거나 제안한 부분은 무엇입니까?`,
+    plain: ['지시받지 않았지만 스스로 문제를 찾아 개선을 실행한 사례는 무엇이고, 결과는 어땠습니까?'] },
+  { key: 'people', label: '팀원 육성·인력 운영',
+    re: /육성|코칭|팀원|후배|리더|인수인계|멘토|이끌|배려|인력|인원|채용/,
+    follow: '이후 실제로 어떤 지원이나 조치를 하셨습니까?',
+    term: v => `‘${v}’와 관련해, 실제로 어떤 지원이나 코칭을 하셨습니까?`,
+    plain: ['후배나 팀원이 막혔을 때 직접 도와준 사례는 무엇이고, 그 뒤 상대의 수행이 어떻게 달라졌습니까?'] },
+  { key: 'quality', label: '품질·컴플라이언스',
+    re: /품질|GMP|규정|법령|컴플라이언스|검증|밸리데이션|안전|재해|규제|시험|분석|데이터|적격성/,
+    follow: '이후 실제로 무엇을 보완하셨습니까?',
+    term: v => `‘${v}’ 기준과 관련해, 실제로 어떻게 확인하고 보완하셨습니까?`,
+    plain: ['데이터나 시험 결과에서 이상을 발견했을 때 실제로 어떻게 확인하고 보고하셨습니까?'] },
+  { key: 'customer', label: '고객·거래처 대응',
+    re: /고객|거래처|병원|원장|처방|영업|방문|코딩|약국|시장|수출|계약/,
+    follow: '이후 대응 방식을 어떻게 바꾸셨습니까?',
+    term: v => `‘${v}’ 대응과 관련해, 실제로 어떻게 진행하셨습니까?`,
+    plain: ['고객이나 거래처의 요구가 무리했던 상황에서 실제로 어떻게 응대해 관계를 유지하셨습니까?'] },
+  { key: 'operation', label: '생산·운영 관리',
+    re: /품절|재고|생산|원가|물류|납품|공급|수급|투입|착수|가동/,
+    follow: '이후 계획이나 운영 방식을 어떻게 바꾸셨습니까?',
+    term: v => `‘${v}’와 관련한 운영에서, 실제로 어떤 조치를 하셨습니까?`,
+    plain: ['재고나 공급 문제가 생길 뻔한 상황에서 미리 어떤 조치를 했고, 결과는 어땠습니까?'] },
+];
+
+/* 월별피드백 '개선할 점' 문장 수집 (관리자 우선, 최근 우선) */
+function collectSnippets(c){
+  const fb = c.월별피드백;
+  if(!fb || !fb.months) return [];
+  const seen = new Set();
+  const mgr = [], self = [];
+  fb.months.slice().reverse().forEach(m => {
+    [['manager', m.managerImprove, mgr], ['self', m.selfImprove, self]].forEach(([who, txt, bucket]) => {
+      splitSentences(txt).map(cleanSnippet).filter(isUsableSentence).forEach(s => {
+        const key = s.replace(/\s/g, '').slice(0, 24);
+        if(seen.has(key)) return;
+        seen.add(key);
+        bucket.push({
+          text: s, who: who,
+          src: who === 'manager' ? moLabel(m.month) + ' 관리자 피드백' : moLabel(m.month) + ' 본인이 적은 개선할 점',
+        });
+      });
+    });
+  });
+  return mgr.slice(0, 12).concat(self.slice(0, 5));
+}
+
+/* 지원서 항목별 문장 수집 */
+function collectFieldSnippets(app, keys){
+  const out = [];
+  const seen = new Set();
+  keys.forEach(k => {
+    splitSentences(app[k]).map(cleanSnippet).filter(isUsableSentence).forEach(s => {
+      const key = s.replace(/\s/g, '').slice(0, 24);
+      if(seen.has(key)) return;
+      seen.add(key);
+      out.push({ text: s, key: k.replace('(최종성과)', '') });
+    });
+  });
+  return out.slice(0, 10);
+}
+
+function detectThemes(text){
+  const scores = [];
+  FB_THEMES.forEach(t => {
+    const m = text.match(new RegExp(t.re.source, 'g'));
+    if(m) scores.push({ key: t.key, n: m.length });
+  });
+  scores.sort((a, b) => b.n - a.n);
+  return scores.slice(0, 2);
+}
+
+function buildThemeMap(snips){
+  const map = {};
+  snips.forEach((s, i) => {
+    const w = (s.who === 'manager' ? 1 : 0.7) * (1 + 0.3 * (1 - i / Math.max(snips.length, 1)));
+    detectThemes(s.text).forEach((d, rank) => {
+      const e = map[d.key] || (map[d.key] = { weight: 0, ev: [] });
+      e.weight += w * (rank === 0 ? 1 : 0.6);
+      e.ev.push({ text: s.text, src: s.src, n: d.n * (rank === 0 ? 2 : 1) });
+    });
+  });
+  Object.keys(map).forEach(k => map[k].ev.sort((a, b) => b.n - a.n));
+  return map;
+}
+
+function buildQuestionPool(c){
+  const job = c.지원직무_확정 || '';
+  const level = levelKey(job) || '어쏘';
+  const app = c.직무급지원서 || null;
+  const star = app ? STAR_FIELDS.map(f => ({ key: f.key, label: f.label, area: f.area, qs: f.qs, plain: f.plain, term: f.term, num: f.num, tail: f.tail, ev: collectFieldSnippets(app, f.src) })) : [];
+  const fbSnips = collectSnippets(c);
+  const map = buildThemeMap(fbSnips);
+  const themes = [];
+  Object.keys(map).forEach(k => {
+    const def = FB_THEMES.find(t => t.key === k);
+    themes.push({ key: k, label: def.label, weight: map[k].weight, questions: def.qs, ev: map[k].ev });
+  });
+  themes.sort((a, b) => b.weight - a.weight);
+  return {
+    job: job, level: level, hasApp: !!app, star: star,
+    fbCount: fbSnips.length, themes: themes, levelQs: LEVEL_QS[level],
+    topLabels: themes.slice(0, 3).map(t => t.label),
+  };
+}
+
+function shuffleArr(a){
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function randOf(list){ return list[Math.floor(Math.random() * list.length)]; }
+
+function weightedPick(items, wfn){
+  const tot = items.reduce((s, x) => s + wfn(x), 0);
+  let r = Math.random() * tot;
+  for(const x of items){ r -= wfn(x); if(r <= 0) return x; }
+  return items[items.length - 1];
+}
+
+function freshOrReset(texts, shown){
+  let f = texts.filter(t => !shown.has(t));
+  if(!f.length){ texts.forEach(t => shown.delete(t)); f = texts.slice(); }
+  return f;
+}
+
+function pickText(list, shown){
+  const t = randOf(freshOrReset(list, shown));
+  shown.add(t);
+  return t;
+}
+
+function fbQuestion(pool, shown, usedThemes){
+  let cand = pool.themes.filter(t => !usedThemes[t.key]);
+  if(!cand.length) cand = pool.themes.slice();
+  const th = weightedPick(cand, t => t.weight + 0.5);
+  usedThemes[th.key] = true;
+  const def = FB_THEMES.find(t => t.key === th.key);
+  let text, quote = null, source = null;
+  if(th.ev.length){
+    const pool2 = th.ev.slice(0, 5);
+    const texts = pool2.map(e => e.text);
+    const chosen = pickText(texts, shown);
+    const s2 = pool2.find(e => e.text === chosen) || pool2[0];
+    const d = extractDetail(chosen);
+    text = (d && def[d.type]) ? def[d.type](d.value) : def.follow;
+    quote = shortQuote(chosen, 90);
+    source = '월별피드백 · ' + s2.src;
+  } else {
+    text = pickText(def.plain, shown);
+  }
+  return { tag: '월별피드백 · ' + th.label, text: text, quote: quote, source: source, tail: randOf(TAIL_GENERIC) };
+}
+
+function levelQuestion(pool, shown){
+  return { tag: pool.level + ' 핵심 확인', text: pickText(pool.levelQs, shown), tail: randOf(TAIL_GENERIC) };
+}
+
+/* 추가 확인 질문 5개: 지원서가 있으면 S→T→A→R 순서 4개 + 1개, 없으면 월별피드백·직무단계 질문 */
+function pickQuestions(pool, shown){
+  const picked = [];
+  const usedThemes = {};
+  if(pool.hasApp){
+    pool.star.forEach(f => {
+      let text, quote = null, source = null;
+      if(f.ev.length){
+        const texts = f.ev.map(e => e.text);
+        const chosen = pickText(texts, shown);
+        const s = f.ev.find(e => e.text === chosen) || f.ev[0];
+        const d = extractDetail(chosen);
+        text = (d && f[d.type]) ? f[d.type](d.value) : randOf(f.qs);
+        quote = shortQuote(chosen, 90);
+        source = f.area;
+      } else {
+        text = pickText(f.plain, shown);
+      }
+      picked.push({ tag: f.key + ' · ' + f.label, text: text, quote: quote, source: source, tail: f.tail });
+    });
+    picked.push(pool.themes.length ? fbQuestion(pool, shown, usedThemes) : levelQuestion(pool, shown));
+  } else {
+    const nFb = Math.min(3, pool.themes.length);
+    for(let i = 0; i < nFb; i++) picked.push(fbQuestion(pool, shown, usedThemes));
+    while(picked.length < 5) picked.push(levelQuestion(pool, shown));
+  }
+  return picked;
+}
+
+function commonHtml(pool){
+  const info = COMMON_QS[pool.level];
+  return info.qs.map((q, i) => `
+    <li class="aiq-item">
+      <span class="aiq-num">${i + 1}</span>
+      <div class="aiq-body"><div class="aiq-q">${escHtml(q.t)}</div><span class="aiq-tag">${escHtml(q.a)}</span></div>
+    </li>`).join('');
+}
+
+function introHtml(pool){
+  const info = COMMON_QS[pool.level];
+  const note = (pool.job.indexOf('팀장') !== -1 || pool.job.indexOf('센터장') !== -1)
+    ? `<div class="aiq-note">교육자료에 ${escHtml(pool.job)} 전용 공통 질문이 없어, 변화혁신을 확인하는 잡매니저 기준을 적용했습니다.</div>` : '';
+  return `
+    <div class="aiq-meta"><b>지원 직무</b> ${escHtml(pool.job || '-')} <span class="aiq-sep">|</span> <b>검증 영역</b> ${escHtml(info.area)}</div>
+    <div class="aiq-meta"><b>핵심 기준</b> ${escHtml(info.core)}</div>
+    <div class="aiq-basis"><b>답변에서 확인할 근거</b><span>실제 사례</span><span>본인 역할</span><span>구체적 행동</span><span>확인 가능한 결과</span></div>
+    ${note}`;
+}
+
+function initQuestions(c){
+  const pool = buildQuestionPool(c);
+  const st = qState[c.사번];
+  document.getElementById('aiq-intro').innerHTML = introHtml(pool);
+  document.getElementById('aiq-common').innerHTML = commonHtml(pool);
+  document.getElementById('aiq-common-sub').textContent = `${pool.level} 공통 질문 · 교육자료 1차안 (전원 동일)`;
+
+  const desc = document.getElementById('aiq-desc');
+  const gen = document.getElementById('aiq-gen');
+  gen.disabled = false;
+  const topic = pool.topLabels.length ? ` 월별피드백 주요 주제: ${pool.topLabels.join(' · ')}.` : '';
+  if(pool.hasApp){
+    desc.textContent = pool.themes.length
+      ? `지원서의 상황·과제/목표·전략/한일·결과를 STAR 순서로 확인하는 질문 4개와, 월별피드백 ‘개선할 점’ ${pool.fbCount}건에서 뽑은 확인 질문 1개입니다.${topic} 다시 생성하면 다른 질문이 나옵니다.`
+      : '지원서의 상황·과제/목표·전략/한일·결과를 STAR 순서로 확인하는 질문 4개와, 직무단계 핵심 기준 확인 질문 1개입니다. 다시 생성하면 다른 질문이 나옵니다.';
+  } else if(pool.themes.length){
+    desc.textContent = `지원서가 없어 월별피드백 ‘개선할 점’ ${pool.fbCount}건과 직무단계 핵심 기준으로 구성합니다.${topic} 다시 생성하면 다른 질문이 나옵니다.`;
+  } else {
+    desc.textContent = '지원서와 월별피드백이 없어 직무단계 핵심 기준 질문으로 구성합니다. 다시 생성하면 다른 질문이 나옵니다.';
+  }
+  gen.textContent = (st && st.current.length) ? '다시 생성' : '질문 생성';
+  renderQuestions(c);
+}
+
+function renderQuestions(c){
+  const box = document.getElementById('d-aiq');
+  const st = qState[c.사번];
+  if(!st || !st.current.length){ box.innerHTML = ''; return; }
+  box.innerHTML = '<ol class="aiq-list">' + st.current.map((q, i) => `
+    <li class="aiq-item">
+      <span class="aiq-num">${i + 1}</span>
+      <div class="aiq-body">
+        ${q.quote ? `<div class="aiq-quote"><span class="aiq-quote-src">발췌 · ${escHtml(q.source)}</span>“${escHtml(q.quote)}”</div>` : ''}
+        <div class="aiq-q">${escHtml(q.text)}</div>
+        <span class="aiq-tag">${escHtml(q.tag)}</span>
+        ${q.tail ? `<div class="aiq-tail2">▸ 꼬리질문 · ${escHtml(q.tail)}</div>` : ''}
+      </div>
+    </li>`).join('') + '</ol>';
+}
+
+function generateQuestions(){
+  const c = currentCandidate;
+  const pool = buildQuestionPool(c);
+  const st = qState[c.사번] || (qState[c.사번] = { shown: new Set(), current: [] });
+  st.current = pickQuestions(pool, st.shown);
+  document.getElementById('aiq-gen').textContent = '다시 생성';
+  renderQuestions(c);
+}
+// AIQ_END
 
 function renderBadgeSection(elId, items){
   const el = document.getElementById(elId);
